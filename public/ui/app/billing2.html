@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+    <style>
+        body {
+            opacity: 0;
+            overflow-x: hidden;
+        }
+
+        html {
+            background-color: #fff;
+        }
+    </style>
+
+</head>
+
+<body style="background: #f7f7f7">
+
+    <!-- navbar -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header" id="mobile-nav">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar top-bar"></span>
+					<span class="icon-bar middle-bar"></span>
+					<span class="icon-bar bottom-bar"></span>
+				</button>
+                <img alt="logo" class="logo-image" src="./img/logo.png" />
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <div class="search-container col-md-2 col-sm-2 clear-left-padding">
+                    <div class="input-group search-input-group">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="search-container col-md-4 col-sm-4">
+                    <fieldset class="field-container search-input-group border-rounded">
+                        <input type="text" placeholder="Search..." class="field" />
+                        <div class="icons-container">
+                            <div class="icon-search"></div>
+                            <div class="icon-close">
+                                <div class="x-up"></div>
+                                <div class="x-down"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="links-container col-md-6 col-sm-6 col-xs-12">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a class="button lang-button" href="#">EN</a></li>
+                        <li class="nav-item">
+                            <div class="profile-link">
+                                <img src="./img/profile-avatar.png" />
+                                <a class="title" href="#">Sergey Pantileev</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navbar -->
+
+    <div class="container-fluid clear-left-padding">
+        <div class="col-md-3 col-sm-2 col-xs-2 clear-left-padding">
+            <!-- sidebar -->
+            <div class="nav-side-menu">
+                <div class="menu-list">
+                    <ul id="menu-content" class="menu-content collapse out">
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/feedback.png" />
+                                <span>Enter your feedback</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/setup.png" />
+                                <span>Set up</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/dashboard.png" />
+                                <span>Dashboard</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/candidates.png" />
+                                <span>Candidates</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/messages.png" />
+                                <span>Messages</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/jobs.png" />
+                                <span>Jobs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/employer.png" />
+                                <span>Employer profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/locations.png" />
+                                <span>Locations</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/integrations.png" />
+                                <span>Integration</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/account.png" />
+                                <span>Account users & roles</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/billing-blue.png" />
+                                <span>Billing</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/sidebar/settings.png" />
+                                <span>Settings</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end sidebar -->
+        </div>
+        <div class="col-md-8 col-sm-10 col-xs-10 billing-info-wrapper">
+            <div class="billing-info">
+                <!-- Breadcrumbs -->
+                <div class="row">
+                  <ol class="breadcrumb">
+                    <li><a href="#">Billing</a></li>
+                    <li class="active">Modify card</li>
+                  </ol>
+                </div>
+                <!-- Credit card info -->
+                <div class="row">
+                    <div class="col-md-12 clear-xs-padding">
+                        <!-- card -->
+                        <div class="card clear-padding">
+                            <!-- header -->
+                            <div class="card-header">
+                                <div class="col-md-12  col-sm-12 col-xs-12 clear-md-padding">
+                                  <div class="col-md-6 col-xs-12 pull-left clear-padding">
+                                    <img alt="education" src="./img/credit-card.png" />
+                                    <span class="header-title">Credit card info</span>
+                                  </div>
+                                </div>
+                            </div>
+                              <!-- content -->
+                            <div class="col-md-12 card-content">
+                                <div class="billing-info">
+                                  <p class="billing-description">
+                                    <img src="./img/locks.png"/>This symbol indicate that this transaction is securised and that you can fill this form trustfully.
+                                    You authorize regularly scheduled charges to your Visa or MasterCard for subscriptions and will be charged each billing period for the total amount due for that period.
+                                  </p>
+                                  <p class="billing-description">
+                                    A notification will be emailed to you and the charge will appear on your debit / credit card statement
+                                  </p>
+                                </div>
+                            </div>
+                            <!-- end card content -->
+                        </div>
+                        <!-- end card-->
+                    </div>
+                </div>
+
+                <br>
+
+                <!-- Add new credit card -->
+                <div class="row">
+                    <div class="col-md-12 clear-xs-padding">
+                        <!-- card -->
+                        <div class="card clear-padding">
+                            <!-- header -->
+                            <div class="card-header">
+                                <div class="col-md-12 col-sm-12 col-xs-12 clear-md-padding">
+                                  <div class="col-md-6 col-sm-12 col-xs-12 pull-left clear-padding">
+                                      <img alt="education" src="./img/new.png" />
+                                      <span class="header-title">Add a new credit card</span>
+                                  </div>
+                                </div>
+                            </div>
+                            <!-- content -->
+                            <div class="card-content">
+                                <div class="billing-info">
+                  									<div class="input-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  										<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 clear-padding-left clear-xs-padding">
+                                        <label class="input-title capitalize" for="name">Name<span class="text-blue">*</span></label>
+                  											<input class="input-field form-control" type="text" placeholder="Sergey" id="name">
+                  										</div>
+                  									</div>
+
+                                    <div class="input-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="col-lg-2 col-md-3 col-sm-2 col-xs-4 clear-padding-right clear-padding-left">
+                                        <label class="input-title capitalize card-number-title" for="name">Card nubmer<span class="text-blue">*</span></label>
+                                        <input class="input-field form-control" type="text" placeholder="xxx" id="name">
+                                      </div>
+                                      <div class="col-lg-2 col-md-3 col-sm-2 col-xs-4 clear-padding-right">
+                                        <label class="input-title capitalize card-number-title" for="name"></label>
+                                        <input class="input-field form-control" type="text" placeholder="xxx" id="name">
+                                      </div>
+                                      <div class="col-lg-2 col-md-3 col-sm-2 col-xs-4 clear-padding-right">
+                                        <label class="input-title capitalize card-number-title" for="name"></label>
+                                        <input class="input-field form-control" type="text" placeholder="xxx" id="name">
+                                      </div>
+                                    </div>
+
+                                    <div class="select-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 clear-padding-right clear-padding-left">
+                                        <label class="input-title capitalize" for="date">EXPIRATION DATE<span class="text-blue">*</span></label>
+                      									<select name="sources" id="date" class="custom-select sources default" placeholder="01">
+                      										<option value="profile">02</option>
+                      										<option value="word">03</option>
+                      										<option value="hashtag">04</option>
+                      									</select>
+                                      </div>
+                                      <div class="col-lg-2 col-md-3 col-sm-3 col-xs-6 clear-padding-right">
+                                        <label class="input-title capitalize" for="date"></label>
+                      									<select name="sources" id="date" class="custom-select sources default" placeholder="17">
+                      										<option value="profile">18</option>
+                      										<option value="word">19</option>
+                      										<option value="hashtag">20</option>
+                      									</select>
+                                      </div>
+                    								</div>
+
+                  									<div class="input-wrapper col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  										<div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 clear-padding-left clear-xs-padding">
+                                        <label class="input-title capitalize" for="card-verification">
+                                          card verification code<span class="text-blue">*</span>
+                                        </label>
+                                        <div class="info-icon-wrapper">
+                                          <span class="info-icon"></span>
+                                        </div>
+                  											<input class="input-field form-control" type="text" placeholder="" id="card-verification">
+
+                  										</div>
+                  									</div>
+
+                                    <div class="input-wrapper col-md-12 col-sm-12 col-xs-12">
+                                      <a class="button card-button large clear-margin-left">Save this credit card</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- end card content -->
+
+                            <!-- Tooltip -->
+                            <div class="tooltip-info" id="tooltip-info">
+                              <div class="tooltip__arrow"></div>
+                              <p class="tooltip-description billing-description">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed d
+                              </p>
+                              <img src="./img/credit_card.png" />
+                            </div>
+                            <!-- end tooltip -->
+
+                        </div>
+                        <!-- end card -->
+                    </div>
+                </div>
+            </div>
+            <!-- end billing-info -->
+            <br><br><br>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="css/main.min.css">
+    <script src="js/scripts.min.js"></script>
+
+</body>
+
+</html>

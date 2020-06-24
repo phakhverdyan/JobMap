@@ -1,0 +1,1 @@
+The new password is successfully confirmed!

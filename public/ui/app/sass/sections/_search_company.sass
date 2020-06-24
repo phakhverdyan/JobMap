@@ -1,0 +1,250 @@
+// filter-card
+.filters-header,.filters-content
+    padding: 15px 30px
+
+.filters-header
+    padding-bottom: 0px
+
+.filters-content
+    padding-bottom: 25px
+
+.filters-wrapper
+	min-height: 65vh
+    z-index: 0
+
+.filters,.card-header
+    background: #fff
+    z-index: 1
+    position: relative
+    border-radius: 5px
+    overflow: hidden
+    .header-title
+        padding: 0 10px
+        font-size: 16px
+        color: #7b7b7b
+        &:first-child
+            font-family: sans-regular
+        &:last-child
+            font-family: sans-light
+    .divide-line
+        margin: 10px 0px
+        border-color: $light-grey
+        width: 100%
+    .title
+        font-size: 14px
+        font-weight: 600
+        color: #7b7b7b
+        font-family: sans-semibold
+        padding-left: 5px
+    .input-form
+        margin-top: 5px
+        margin-bottom: 10px
+        input
+            height: 44px
+    .days-table-container
+        margin-top: 5px
+        .cell
+            height: 65px
+    .filter-button
+        display: block
+        margin-top: 10px
+        font-size: 16px
+        font-family: sans-semibold
+        font-weight: 300
+        border-color: $dark-blue
+        &:hover
+            background: $dark-blue
+    .days-table-container .days-table .cell
+        justify-content: center
+        .icon
+            top: 6px
+            right: 5px
+        &:hover
+            background: $dark-blue
+            color: $white
+            .sun-icon
+                background: url(./../img/sun-hover.png) no-repeat
+            .sunrise-icon
+                background: url(./../img/sunrise.png) no-repeat
+            .night-icon
+                background: url(./../img/night.png) no-repeat
+        .control
+            margin: 0px
+    .switch-field
+        margin-top: 5px
+        margin-bottom: 5px
+        label
+            height: 44px
+            padding: 11px 16px
+        input:checked+label
+            background: $dark-blue
+    .button
+        text-align: center
+
+// search-company-content
+
+.search-company-content
+    min-height: 78vh
+    margin-bottom: 100px
+    .card
+        background: #fff
+        z-index: 1
+        position: relative
+        border-radius: 5px
+        padding: 10px
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+    .company-logo
+        background: #fff
+        text-align: center
+        padding-bottom: 20px
+        padding-top: 20px
+        border: 1px solid #ececec
+    .header-title
+        font-size: 16px
+        color: #7b7b7b
+        line-height: 44px
+        font-weight: 600
+        text-transform: uppercase
+        font-family: sans-semibold
+        display: block
+        height: 60px
+    .title
+        font-size: 16px
+        font-weight: 400
+        color: #7b7b7b
+        font-family: sans-regular
+    .info-text
+        width: 91px
+        height: 46px
+        color: #2380ed
+        font-family: sans-regular
+        font-size: 14px
+        font-weight: 400
+        line-height: 35px
+    .text
+        // width: 91px
+        // height: 46px
+        color: #7b7b7b
+        font-family: sans-regular
+        font-size: 14px
+        font-weight: 400
+        line-height: 35px
+    .logo-wrapper
+        width: 20px
+        display: inline-block
+    .divide-line
+        border-color: $light-grey
+        width: 100%
+        margin: 10px 0px
+    .filter-list
+        height: 555px
+        padding: 0
+        padding-top: 15px
+        padding-left: 20px
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+        .list-item
+            padding-top: 10px
+            padding-bottom: 10px
+            padding-left: 25px
+            padding-right: 25px
+        .title
+            margin-left: 15px
+            color: $dark-blue
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+    .profile-link .title
+        margin-left: -1px
+    .card-content .company-logo
+        border: 0px
+    .search-company-content .company-logo
+        padding-bottom: 15px
+        padding-top: 15px
+    .search-company-content .text
+        font-size: 12px
+    .nav-button,.lang-button
+        margin-left: 0px
+        margin-right: 0px
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+    .clear-sm-padding
+        padding: 0
+    .switch-field label
+        width: 50%
+    .search-company-content .filter-list
+        height: initial
+    .search-company-content .company-logo
+        padding-bottom: 20px
+        padding-top: 20px
+        width: 100px
+    .filters
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+    .filters-wrapper
+        min-height: 77vh
+    .large-map
+        height: 85vh
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+    .filters
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+    .filters-header
+        padding: 15px 7px
+    .filters-content
+        .col-md-6
+            &:first-child,&:last-child
+                padding: 0
+        .col-xs-12
+            padding: 0
+            .days-table-container
+                margin: 0px
+    .switch-field label
+        width: 50%
+    .search-company-content
+        margin-top: 2%
+        .col-xs-12
+            padding: 0
+        .filter-list
+            height: initial
+            padding-top: 15px
+    .clear-sm-padding
+        padding-left: 15px
+        padding-right: 15px
+    
+    .items
+        display: flex
+        flex-direction: row
+        justify-content: space-around
+        flex-wrap: wrap
+        padding: 20px
+        .divide-line
+            display: none
+        .text-wrapper
+            width: 110px
+            .text
+    .filters-wrapper
+        min-height: 93vh
+    .filters-header
+        padding-bottom: 0px
+    .large-map
+        height: 110vh
+    .nav-button,.lang-button
+        margin-left: 10px
+        margin-right: 0px
+@media only screen and (max-width : 375px)
+    .items
+        padding: 20px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+    .filters-wrapper
+        min-height: 95vh
+    .card-header .header-title, .filters .header-title
+        padding: 0 5px
+        font-size: 15px
+    .items
+        padding: 15px

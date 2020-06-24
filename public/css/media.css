@@ -1,0 +1,220 @@
+@media only screen and (max-width: 1675px){
+	.part_rb{
+		display: none;
+	}
+	.resume_overview_xxl_screen{
+		flex: 0 0 91.666667%!important;
+    	max-width: 91.666667%!important;
+	}
+}
+
+@media only screen and (max-width: 1255px){
+	.sidebar_adaptive-,
+	.logo-text,
+	.search_navbar,
+	.jobs_navbar{
+		display: none;
+	}
+	.width-100{
+		max-width: 95%!important;
+		flex:0 0 95%;
+	}
+	.navbar-nav .dropdown-menu{
+		position: absolute;
+	}
+}
+
+@media only screen and (max-width: 1200px){
+	.long_stick{
+		width: 844px!important;
+	}
+	.business_name_color{
+		font-size: 25px!important;
+	}
+}
+
+@media only screen and (max-width: 1024px){
+	.thumbnail .fade-fast,
+	.thumbnail .fade-fast-adaptive-business,
+	.thumbnail .fade-fast-adaptive-user,{
+		height: 90vh;
+	}
+
+}
+@media only screen and (max-width: 992px){
+	.cardinal_button{
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+	.pxa-0{
+		padding-left: 0px!important;
+		padding-right: 0px!important;
+	}
+	.business_background_img{
+		height: auto!important;
+	}
+	.business_top_location{
+		position: relative!important;
+	}
+	.back_to_fullmap-button{
+		margin-top: -30px!important; 
+	}
+	.career-page_buss-logo_mobile{
+		padding-top: 40px!important;
+		padding-bottom: 15px;
+	}
+	.mxa-0{
+		margin-right: 0px!important;
+		margin-left: 0px!important;
+	}
+	.business-logo-medium{
+		margin-left: 20px!important;
+	}
+	.triangle,
+	.long_stick,
+	.business_stick,
+	.interview_stick,
+	.connect::before{
+		display: none;
+	}
+	.mxa-auto{
+		margin: 0 auto;
+	}
+	.login_landing{
+		position: initial!important;
+		justify-content: center;
+		margin-top: 10px;
+	}
+	.candidate-tools{
+		width: 100%!important;
+	}
+	.all_steps::before,
+	.rb_steps.done.start::before,
+	.rb_steps.done_check.start::before{
+	    content: "";
+	    position: absolute;
+	    width: 0;
+	    height: 0;
+	}
+	.small_check_icon{
+		width: 30px!important;
+		height: 30px!important;
+	}
+	.font-25{
+		font-size: 20px;
+	}
+	.response_title_pricing{
+		font-size: 25pt!important;
+	}
+
+}
+@media only screen and (max-width: 991px){
+	.part_rb{
+		display: block;
+	}
+	.width-100-lg{
+		width: 100%;
+		max-width: 100%;
+	}
+	.careerpage_businessname{
+		margin-top: 0!important;
+		background-color: #fff!important;
+		position: inherit!important;
+		height: auto!important;
+	}
+	.business_name_color{
+		color:#000!important;
+	}
+	.careerpage_icon{
+		margin-top: -30px;
+	}
+	.resume_name{
+		font-size: 40px!important;
+	}
+	.resume_headline{
+		font-size: 19px;
+		line-height: 1.2;
+	}
+}
+@media only screen and (max-width: 768px){
+	body{
+		font-size: 14px;
+	}
+	.rb_steps_info{
+		font-size:20px!important;
+	}
+	.navbar{
+		justify-content: initial;
+	}
+	.navbar-toggle{
+		visibility: hidden;
+	}
+	.font-response-20{
+		font-size: 20px!important;
+	}
+	.font-response-14{
+		font-size: 14px!important;
+	}
+	.font-response{
+		font-size: 11px!important;
+	}
+	.rs_stick_notactive,
+	.user_dialogs{
+		display: none;
+	}
+	.flex-auto{
+		flex: auto;
+		max-width: 100%;
+	}
+	.max-content{
+		max-width: inherit;
+	}
+	.business_top_location p{
+		font-size: 12px;
+	}
+	.width-100-md{
+		width: 100%;
+		max-width: 100%;
+	}
+	.resume_overview_xxl_screen{
+		flex: 0 0 100%!important;
+    	max-width: 100%!important;
+	}
+}
+
+@media only screen and (max-width: 576px){
+	.hide_text{
+		display: none;
+	}
+	.margin-sm-2{
+		margin-left: .5rem!important;
+		margin-right: .5rem!important;
+	}
+}
+
+
+
+
+
+@media only screen and (max-height: 740px){
+	.fade-fast{
+		height: calc(100vh - 70px);
+	}
+}
+@media only screen and (max-height: 937px){
+	.fade-fast-adaptive-user,
+  	.fade-fast-adaptive-business{
+		height: calc(100vh - 70px);
+	}
+}
+
+@media only screen and (max-height: 1200px){
+	.business-fade-fast{
+		height: calc(100vh - 70px);
+	}
+}
+
+
+
+
+

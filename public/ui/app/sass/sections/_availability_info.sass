@@ -1,0 +1,105 @@
+@import "./../vars"
+
+.availability-form .control
+  margin-right: 25px
+
+.days-icons
+	display: inline-flex
+	justify-content: space-around
+	margin-left: 105px
+	width: 47%
+
+.availability-info
+	.next
+		margin-bottom: 20px
+	.availability-form
+		padding-left: 30px
+		.control
+      margin-right: 10px
+	.days-table-container .days-table .cell
+		.control
+			padding-left: 0
+			margin-right: 0
+			width: 100%
+		.control-indicator
+			margin-left: auto
+			margin-right: auto
+			left: 0
+			right: 0
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/*view 2*/
+	.availability-info
+		.next
+			margin-top: 15px
+			margin-right: 25px
+			margin-bottom: 24px
+		.days-icons
+			margin-left: 65px
+		.availability-form
+			padding-left: 34px
+			.control
+				margin-right: 0px
+				padding-left: 50px
+				.control-indicator
+					left: 10px
+		// .days-table-container .days-table .cell .control .control-indicator
+		// 	left: 55px!important
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.availability-info
+		.days-icons
+			margin-left: 50px
+		.availability-form
+			padding-left: 35px
+			.control
+				margin-right: 0px
+				padding-left: 45px
+
+@media only screen and (max-width : 480px)
+	.days-list
+		margin-top: 20px
+		> li
+			width: 13px
+			overflow: hidden
+			letter-spacing: 10px
+			line-height: 60px
+	.days-table-container
+		margin-right: 15px
+		margin-top: 20px
+		.days-table
+			display: flex
+			flex-direction: row
+		.name
+			font-size: 12px
+	.days-icons
+		margin-top: 20px
+		margin-left: 8vw!important
+		width: 85%
+	.availability-info
+		.availability-form
+			height: 140px
+			display: block
+			padding:
+				right: 0px
+				left: 29px
+			.control
+				margin-right: 15px
+				padding-left: 35px
+				padding-right: 0px
+				text-align: left
+				.control-indicator
+					left: 0px
+		.next
+			margin-top: 10px
+			margin-right: 0px
+
+@media only screen and (max-width : 320px)
+	.availability-info
+		.availability-form
+			padding:
+				left: 22px
+	.days-icons
+		margin-left: 3vw!important

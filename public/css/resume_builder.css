@@ -1,0 +1,440 @@
+  .form-tab-container {
+    display: flex;
+    background-color: #fff;
+    padding: 0px;
+    margin-top: 75px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-tab-menu {
+    padding: 0px;
+    margin: 0px;
+  }
+  
+  .list-group {
+    height: 100%;
+    margin-bottom: 0px;
+    overflow: hidden;
+  }
+  
+  .list-group-item.active {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    color: #1d90ed;
+  }
+  .list-group-item.active:focus {
+    background-color: #f4f4f4;
+    border-color: #ddd;
+    color: #1d90ed;
+  }
+  .list-group-item.active:hover {
+    background-color: #1d90ed;
+    border-color: #1d90ed;
+    color: #fff;
+  }
+  .list-group-item.active .job-icon {
+    background: url(./../img/resume-builder/blue-suitcase.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .info-icon {
+    background: url(./../img/resume-builder/important-message-blue.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .education-icon {
+    background: url(./../img/resume-builder/graduate-cap-blue.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .skills-icon {
+    background: url(./../img/resume-builder/important-message-blue.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .experience-icon {
+    background: url(./../img/resume-builder/time-almost-full-blue.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .additional-info-icon {
+    background: url(./../img/resume-builder/plus-button-blue.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item.active .print-icon {
+    background: url(./../img/resume-builder/printer-printing-document-blue.png) no-repeat;
+    background-size: contain;
+  }
+  
+  a.list-group-item, button.list-group-item {
+    color: #7d7d7d;
+    transition: all 0.25s ease;
+  }
+  a.list-group-item:hover, button.list-group-item:hover {
+    color: #fff;
+    background-color: #1d90ed;
+    border-color: #1d90ed;
+  }
+  a.list-group-item .active, button.list-group-item .active {
+    background-color: #1d90ed;
+    border-color: #1d90ed;
+  }
+  
+  .list-group-item {
+    height: 110px;
+    padding: 36px 35px 36px 50px;
+    text-align: left;
+    font-family: sans-regular;
+    font-weight: 400;
+    font-size: 14px;
+  }
+  .list-group-item:first-child {
+    border-top-right-radius: 0px;
+  }
+  .list-group-item:last-child {
+    height: calc(100% - 5px);
+    padding: 50px 35px 80px 50px;
+    border-bottom-right-radius: 0px;
+  }
+  .list-group-item:hover {
+    background-color: #1d90ed;
+    border-color: #1d90ed;
+  }
+  .list-group-item:hover .job-icon {
+    background: url(./../img/resume-builder/white-suitcase.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .info-icon {
+    background: url(./../img/resume-builder/important-message-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .education-icon {
+    background: url(./../img/resume-builder/graduate-cap-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .skills-icon {
+    background: url(./../img/resume-builder/favorite-star-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .experience-icon {
+    background: url(./../img/resume-builder/time-almost-full-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .additional-info-icon {
+    background: url(./../img/resume-builder/plus-button-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item:hover .print-icon {
+    background: url(./../img/resume-builder/printer-printing-document-white.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .job-icon {
+    background: url(./../img/resume-builder/grey-suitcase.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .info-icon {
+    background: url(./../img/resume-builder/important-message-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .education-icon {
+    background: url(./../img/resume-builder/graduate-cap-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .skills-icon {
+    background: url(./../img/resume-builder/favorite-star-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .experience-icon {
+    background: url(./../img/resume-builder/time-almost-full-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .additional-info-icon {
+    background: url(./../img/resume-builder/plus-button-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .print-icon {
+    background: url(./../img/resume-builder/printer-printing-document-grey.png) no-repeat;
+    background-size: contain;
+  }
+  .list-group-item .active {
+    z-index: 2;
+    color: #fff;
+  }
+  .list-group-item .active:focus, .list-group-item .active:hover {
+    z-index: 2;
+    color: #fff;
+    background-color: #1d90ed;
+    border-color: #1d90ed;
+  }
+  
+  .list-group-item:last-child.active:after {
+    top: 22% !important;
+  }
+  
+  /* active triangle */
+  div.form-tab-menu div.list-group > a.active:after {
+    content: "";
+    position: absolute;
+    right: -1%;
+    top: 50%;
+    margin-top: -13px;
+    border-left: 0;
+    border-bottom: 13px solid transparent;
+    border-top: 13px solid transparent;
+    border-right: 12px solid #fff;
+  }
+  
+  .title {
+    margin-top: 25px;
+  }
+  .title > img {
+    margin-right: 10px;
+    position: relative;
+  }
+  .title > span {
+    position: relative;
+    top: 4px;
+    color: #1d90ed;
+    font-weight: 300;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 14px;
+    font-family: sans-regular;
+  }
+  .title .sub-title {
+    color: #7b7b7b;
+    font-family: sans-light;
+    font-weight: 300;
+    font-size: 13px;
+    position: relative;
+    right: 5px;
+  }
+  
+  div.form-tab div.form-tab-content:not(.active) {
+    display: none;
+  }
+
+  .days-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 48px;
+  }
+  .days-list>li {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: sans-regular;
+    color: #7b7b7b;
+    line-height: 53px;
+  }
+
+  /* days table section */
+
+  .days-table-container {
+      margin-top: 30px;
+  }
+  .days-table-container .days-table {
+    height: 60px;
+    padding: 0px;
+  }
+  .education-info .days-table-container .days-table:first-child .cell {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: rgb(242, 242, 242);
+    border-top: 1px solid rgb(242, 242, 242);
+  }
+  .days-table-container .days-table .cell:last-child {
+      border-right: 1px solid rgb(242, 242, 242);
+  }
+  .days-table-container .days-table .cell {
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      flex-direction: row;
+      height: 60px;
+      border-top-style: initial;
+      border-right-style: initial;
+      border-top-color: initial;
+      border-right-color: initial;
+      border-width: 0px 0px 1px 1px;
+      border-image: initial;
+      border-bottom: 1px solid rgb(242, 242, 242);
+      border-left: 1px solid rgb(242, 242, 242);
+      transition: all 0.25s ease;
+  }
+  .education-info .days-table-container .days-table:first-child .cell .input-group {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+  }
+  .education-info .days-table-container .days-table .cell .input-group .form-control {
+      height: 100%;
+      width: 100%;
+      border-radius: 0px;
+      border: none;
+      box-shadow: none;
+      background: rgb(255, 255, 255);
+  }
+  .education-info .days-table-container .days-table:first-child .cell .input-group .form-control {
+    background: rgb(242, 242, 242);
+  }
+
+  .tab-type{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    font-size: 11px;
+    font-weight: lighter;
+  }
+  .tab-type-required{
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.05);
+    margin-top: 3px;
+    padding: 0 .25rem;
+    font-size: 12px;
+  }
+  .tab-type-recommended-apply{
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.05);
+    margin-top: 3px;
+    padding: 0 .25rem;
+    font-size: 12px;
+  }
+  .tab-type-recommended{
+    color: #ffc107;
+    background: rgba(255, 193, 7, 0.05);
+    margin-top: 3px;
+    padding: 0 .25rem;
+    font-size: 12px;
+
+  }
+
+  .rb_steps{
+    width: 30px;
+    height: 30px;
+    border:1px solid #dc3545;
+    position: relative;
+    border-radius: 50%;
+    box-sizing: border-box;
+    padding-top: 1px;
+  }
+  .rb_steps.done_check{
+    border:2px solid rgba(40, 167, 69,0)!important;
+    color:rgba(76,175,80,0.6);
+    background-color: #27cfc3;
+    fill:#fff;
+  }
+  .rb_steps.done{
+    border:2px solid rgba(7, 71, 166, 0);
+    color:#fff;
+    background: #4266ff;
+  }
+  .rb_steps.notdone{
+    border:2px solid rgba(220,53,69,0);
+    background: rgba(220,53,69,0.6);
+    color:#fff;
+  }
+  .rb_steps.notactive{
+    border:2px solid #9BA6B2;
+    color:#9BA6B2;
+  }
+  .rb_steps.done::after,
+  .rb_steps.done_check::after {
+    content: "";
+    position: absolute;
+    left:50%;
+    z-index: 1;
+    top:28px;
+    width: 1px;
+    height: 33px;
+    background-color: #27cfc3;
+  }
+  .rb_steps.notdone::after {
+    content: "";
+    position: absolute;
+    left:50%;
+    z-index: 1;
+    top:28px;
+    width: 1px;
+    height: 33px;
+    background-color: #dc3545;
+  }
+  .rb_steps.notactive::after {
+    content: "";
+    position: absolute;
+    left:50%;
+    z-index: 1;
+    top:28px;
+    width: 1px;
+    height: 33px;
+    background-color: #9BA6B2;
+  }
+
+  .rb_steps.done.start::before,
+  .rb_steps.notactive.start::before,
+  .rb_steps.done_check.start::before {
+    content: "";
+    position: absolute;
+    left:50%;
+    z-index: 1;
+    top: -116px;
+    width: 1px;
+    height: 114px;
+    background-color: #27cfc3;
+  }
+
+  .rb_steps.notdone.end::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+  }
+  .rb_steps.done.end::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+  }
+  .rb_steps.notactive.end::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+  }
+  .rb_steps.done_check.end::after {
+    content: "";
+    position: absolute;
+    height: 0px;
+  }
+
+  .all_steps{
+    width: 100px;
+    height: 100px;
+    border: rgba(76,175,80,0) solid 8px;
+    box-shadow: 0 0 3px #27cfc3;
+    color:#fff;
+    background-color: #27cfc3;
+    border-radius: 50%;
+    box-sizing: border-box;
+    font-size: 25px;
+    padding-top: 32px;  
+  }
+  .all_steps::before{
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 40%;
+    z-index: 1;
+    width: 7px;
+    height: 1px;
+    background-color: #27cfc3;
+  }
+
+  .topbar_save_rb{
+    position: fixed; 
+    width: 100%; 
+    z-index: 5; 
+    right:0; 
+    top: 55px; 
+    border-bottom:1px solid rgba(78,92,110,.1); 
+    -webkit-box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.1); 
+    -moz-box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.1); 
+    box-shadow: 0px 5px 12px 0px rgba(0,0,0,0.1); 
+    display: none;
+  }

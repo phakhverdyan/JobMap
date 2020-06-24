@@ -1,0 +1,269 @@
+.content .content-title {
+	font-size: 36px;
+	font-weight: 400;
+	line-height: 53px;
+	/* Text style for "Licenses" */
+	letter-spacing: 0.36px;
+	margin-bottom: 55px;
+}
+
+.applicants-item {
+	padding: 25px;
+	display: flex;
+	justify-content: space-between;
+	cursor: pointer;
+}
+
+.applicants-item:hover {
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.06);
+}
+
+.applicants-item .applicants-item__personal-info {
+	display: flex;
+}
+
+.applicants-item .applicants-item__personal-info .applicant-photo {
+	margin-right: 30px;
+	min-width: 60px;
+}
+
+.applicants-item .applicants-item__personal-info .applicant-name {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 14px;
+}
+
+.applicants-item .applicants-item__personal-info .applicant-location img {
+	vertical-align: middle;
+	margin-top: -3px;
+	margin-right: 5px;
+}
+
+.applicants-item .applicants-item__personal-info .applicant-location,
+.applicants-item .applicants-item__personal-info .applicant-description {
+	color: #888888;
+	font-size: 14px;
+	margin-bottom: 14px;
+}
+
+.applicants-item .applicants-item__personal-info .applicant-status {
+	color: #0146b3;
+	font-size: 14px;
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.applicants-item .applicants-item__applied-info {
+	text-align: right;
+}
+
+.applicants-item .applicants-item__applied-info .applicant-applied-to,
+.applicants-item .applicants-item__applied-info .applicant-applied-date {
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.applicants-item .applicants-item__applied-info .applicant-applied-to .applicant-open-more-info {
+	margin-left: 5px;
+}
+
+.applicants-item .applicants-item__applied-info .applicant-applied-to span {
+	color: #0146b3;
+	font-weight: bold;
+}
+
+.applicant__additional-information {
+	position: fixed;
+	right: 0; top: 0;
+	background-color: #0146b3;
+	color: #ffffff;
+	height: 100vh;
+	width: 50%;
+	max-width: 960px;
+	transform: translateX(100%);
+	visibility: hidden;
+}
+
+.applicant__additional-information .applicant__additional-information__wrapper {
+	overflow-y: auto;
+	height: 100%;
+	padding: 30px 60px;
+}
+
+.applicant__additional-information__avatar-image {
+	vertical-align: middle;
+	margin-top: -3px;
+	border-radius: 50%;
+}
+
+.applicant__additional-information__close-button {
+	vertical-align: middle;
+	margin-top: -3px;
+	transform: rotateZ(90deg);
+}
+
+.applicant__additional-information.non-active {
+	transform: translateX(100%);
+	transition: transform 1s;
+	visibility: visible;
+}
+
+.applicant__additional-information.active {
+	transform: translateX(0);
+	transition: transform 1s;
+	visibility: visible;
+}
+
+.applicant__additional-information .close-btn {
+	width: 110px;
+	height: 110px;
+	position: absolute;
+	left: -55px; top: 20px;
+	box-shadow: 0 0 13px rgba(0, 0, 0, 0.13);
+	background-color: #023f95;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 110px;
+}
+
+.applicant__additional-information.active .close-btn {
+	visibility: visible;
+}
+
+.applicant__additional-information.non-active .close-btn {
+	visibility: hidden;
+}
+
+.applicant__additional-information .applicant__additional-information__header {
+	display: flex; 
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 35px;
+}
+
+.applicant__additional-information .applicant__additional-information__header .download-btn {
+	border-radius: 3px;
+	background-color: #ffffff;
+	color: #106cd7;
+	font-size: 16px;
+	font-weight: bold;
+	border: none;
+	padding: 23px 35px;
+	cursor: pointer;
+}
+
+.applicant__additional-information .applicant-name {
+	font-size: 30px;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
+
+.applicant__additional-information__main {
+	display: flex;
+	align-items: center;
+}
+
+.applicant__additional-information__main img,
+.applicant__additional-information__main span {
+	margin-right: 10px;
+}
+
+.applicant__additional-information__main div {
+	flex: 1 1;
+}
+
+.applicant__additional-information__main p {
+	font-size: 16px;
+	margin-bottom: 25px;
+}
+
+.applicant__additional-information hr {
+	border-top: 1px solid #0e60bf;
+	border-bottom: none;
+	border-left: none;
+	border-right: none;
+}
+
+.applicant__additional-information .applicant__additional-information__summary,
+.applicant__additional-information .applicant__additional-information__education,
+.applicant__additional-information .applicant__additional-information__expirience {
+	padding: 15px 0;
+}
+
+.applicant__additional-information .applicant__additional-information__summary p {
+	line-height: 24px;
+}
+
+.applicant__additional-information .applicant__additional-information__title {
+	margin-bottom: 30px;
+	font-size: 18px;
+}
+
+.applicant__additional-information__one-item p {
+	margin-bottom: 20px;
+}
+
+.applicant__additional-information__one-item {
+	margin-bottom: 40px;
+}
+
+.applicant__additional-information__one-item:last-child,
+.applicant__additional-information__one-item p:last-child {
+	margin-bottom: 0;
+}
+
+/*-----------------------------------------------*/
+
+
+@media only screen and (max-width: 1024px){
+	.applicants-item {
+		flex-wrap: wrap;
+	}
+
+	.applicant__additional-information {
+		width: 100%;
+	}
+
+	.applicant__additional-information .close-btn {
+		position: relative;
+		width: auto;
+		height: auto;
+		top: 0; left: 0;
+		background-color: transparent;
+		box-shadow: none;
+	}
+
+	.applicant__additional-information .applicant__additional-information__wrapper {
+		padding: 60px 15px 200px 15px;
+		overflow-y: auto;
+		box-sizing: border-box;
+	}
+
+	.applicants-item .applicants-item__personal-info {
+		flex-wrap: wrap; 
+		text-align: center;
+		margin-bottom: 30px;
+	}
+
+	.applicants-item .applicants-item__personal-info .applicant-photo {
+		margin: 0 auto 20px;
+	}
+
+	.applicants-item .applicants-item__applied-info {
+		text-align: center;
+		width: 100%;
+	}
+
+	.applicant__additional-information__main,
+	.applicant__additional-information .applicant__additional-information__header {
+		flex-direction: column;
+	}
+
+	.applicant__additional-information .applicant-name {
+		text-align: center;
+	}
+
+	.applicant__additional-information__main div {
+		width: 100%;
+	}
+}

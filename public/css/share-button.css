@@ -1,0 +1,23 @@
+.share_button_form input[type="color"] {
+    height: 38px;
+}
+
+.share_button_form .icon-right {
+    position: relative;
+}
+
+.share_button_form .icon-right i {
+    position: absolute;
+    right: 25px;
+    bottom: 11px;
+}
+
+.share_button_form .icon-right input {
+    padding-right: 28px;
+}
+
+.share_button_form select.form-control {
+    -webkit-appearance: menulist;
+    -moz-appearance: menulist;
+    appearance: menulist;
+}

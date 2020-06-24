@@ -1,0 +1,17 @@
+{
+  "name": "filler",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.6.1",
+    "geolib": "^2.0.24",
+    "mysql": "^2.16.0",
+    "needle": "^2.2.4"
+  }
+}

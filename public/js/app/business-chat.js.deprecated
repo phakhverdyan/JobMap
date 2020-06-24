@@ -1,0 +1,590 @@
+var urlserver = window.location.origin.search('devx') > 0 ? '163.172.71.17' : window.location.origin;
+
+var socket = io(urlserver + ':3333', {
+    reconnection: false,
+});
+
+var send = {};
+var data = {};
+var dom = {};
+var user_info = {};
+var state = {
+    offline: 0,
+    online: 1,
+    afk: 2,
+    dnd: 3
+};
+var searchTimeout;
+
+
+// Rooms list
+var ownRoom = {};
+
+
+var room;
+var typing = false;
+var timeout = undefined;
+var timeCheck = 2000;
+
+// socket events name
+var socketEvent = {
+    room: 'switchRoom',
+    typing: 'typing',
+    stopTyping: 'stop typing',
+    send: 'send',
+    open: 'open',
+    userJoin: 'user joined',
+    newMessage: 'new message',
+    leave: 'leave',
+    leaveRoom: 'leaveRoom',
+    enterRoom: 'enterRoom',
+    online: 'online'
+};
+
+var chat;
+var timeagoInstance = timeago();
+
+// current active room
+var activeRoom;
+
+function Chat() {
+    this.objects;
+}
+
+Chat.prototype = {
+    init: function () {
+        this.getDom();
+        this.getDataBusiness();
+        this.setStatus(state.online);
+        this.getChat();
+
+    },
+    getUsersOnline: function () {
+        var params = {
+            "business_id": APIStorage.read('business-id')
+        };
+        new GraphQL("query", "getUsersOnline", params, [
+            'items{user{username is_online}}',
+            'token'
+        ], true, false, function () {
+            Loader.stop();
+        }, function (data) {
+            chat.setUserStatus(data.items);
+        }, false).request();
+    },
+    setUserStatus: function (users) {
+        $.each(users, function (i, el) {
+                var status = '';
+                switch (el.user.is_online) {
+                    case 1:
+                        status = 'online';
+                        break;
+                    case 2:
+                        status = 'afk';
+                        break;
+                    case 3:
+                        status = 'dnd';
+                        break;
+                    default:
+                        status = '';
+                        break
+                }
+                $('.one-message[data-id="' + el.user.username + '"] .user-status').addClass(status);
+            }
+        );
+    },
+    setStatus: function (status) {
+        var params = {
+            "is_online": status
+        };
+        new GraphQL("mutation", "updateUser", params, [
+            'token'
+        ], true, false, function () {
+            Loader.stop();
+        }, function (data) {
+
+        }, false).request();
+    },
+    getDataBusiness: function () {
+        var business_params = {
+            "id": APIStorage.read('business-id')
+        };
+        new GraphQL("query", "business", business_params, [
+            'name slug picture ',
+            'token'
+        ], true, false, function () {
+            Loader.stop();
+        }, function (data) {
+            user_info = {
+                user: {
+                    first_name: user.data.first_name,
+                    last_name: user.data.last_name,
+                    pic: user.data.user_pic_options_md,
+                    username: user.data.username
+                },
+                business: {
+                    name: data.name,
+                    slug: data.slug,
+                    picture: data.picture
+                }
+            };
+        }, false).request();
+    },
+    getChat: function () {
+        var params = {
+            "business_id": APIStorage.read('business-id')
+        };
+        new GraphQL("query", "businessChats", params, [
+            'chats{' + [
+                'id',
+
+                'business{' + [
+                    'name',
+                    'slug',
+                    'business_last_activity',
+                    'picture',
+                    'business_is_online',
+                ].join(' ') + '}',
+
+                'user{' + [
+                    'first_name',
+                    'last_name',
+                    'username',
+                    'last_activity',
+                    'user_pic',
+                    'is_online',
+                ].join(' ') + '}',
+
+                'last_message{' + [
+                    'text',
+                ].join(' ') + '}',
+
+                'secret_token',
+            ].join(' ') + '}',
+
+            'token',
+        ], true, false, function () {
+            Loader.stop();
+        }, function(response) {
+            if (response.chats.length > 0) {
+                $.each(response.chats, function(response_chat_index, response_chat) {
+                    ownRoom[response_chat_index] = response_chat.room;
+                    var html = ' <div class="d-flex flex-row px-0 card rounded border-0   one-message"' +
+                        ' data-id="' + response_chat.id + '" data-id="' + response_chat.user.username + '"><div class="avatar mt-1 ml-1 mb-1">' +
+                        '<img src="' + response_chat.user.user_pic + '" alt="avatar" style="width: 65px;" class="border rounded"></div>' +
+                        '<div class="name_last pl-2 pt-2"  style="max-width: 60%; overflow: hidden; text-overflow: ellipsis;">' +
+                        '<p class="h6">' + response_chat.user.first_name + ' ' + response_chat.user.last_name + '</p>' +
+                        '<p class="text-muted" style="white-space: nowrap; display: inline-block;"> ' + (response_chat.last_message ? response_chat.last_message.text : '') + '</p>' +
+                        '</div>' +
+                        '<div class="date_newicon ml-auto pr-2">' +
+                        '<small style="color:#0747a6; font-size: 14px; display: none;" class="message_last mt-2 js-lastActivity_user_' + response_chat.user_id + '" data-datetime="' + response_chat.user.last_activity + '"></small>' +
+                        '</div> <div class="user-status"></div>' +
+                        '</div>'
+                    $('.js-rooms-list').append(html);
+                    chat.timeAgo('.js-lastActivity_user_' + response_chat.user_id);
+                });
+                if (localStorage.getItem('chatRoom')) {
+                    activeRoom = localStorage.getItem('chatRoom');
+                    $('.one-message[data-room="' + activeRoom + '"]').trigger('click');
+                }
+                user_info.rooms = ownRoom;
+                // chat.getUsersOnline();
+                chat._open(user_info);
+            }
+
+        }, false).request();
+    },
+    getMessages: function() {
+        new GraphQL("query", "chatMessages", {
+            "chat": $('.message-active').data('room'),
+        }, [
+            'items{ user{last_name first_name user_pic last_activity id} business{picture name slug} message user_id created_at}',
+            'own',
+            'token'
+        ], true, false, function() {
+            Loader.stop();
+        }, function(data) {
+            var own = data.own;
+
+            if (data.messages.length > 0) {
+                var html = '';
+                var current_user = '';
+                var last_activity = '';
+                var collocutor = '';
+                $.each(data.items, function (i, el) {
+                    var is_owm = false;
+                    data = {
+                        user: {
+                            first_name: el.user.first_name,
+                            last_name: el.user.last_name,
+                            pic: el.user.user_pic,
+                            username: el.user.username
+                        }
+                    };
+                    if (parseInt(own) === parseInt(el.user_id)) {
+                        is_owm = true;
+                        data = {
+                            user: {
+                                first_name: el.user.first_name,
+                                last_name: el.user.last_name,
+                                pic: el.user.user_pic,
+                                username: el.user.username
+                            },
+                            business: {
+                                name: el.business.name,
+                                slug: el.business.slug,
+                                picture: el.business.picture
+                            }
+                        };
+                    } else {
+                        collocutor = el.user.first_name + ' ' + el.user.last_name;
+                        last_activity = el.user.last_activity;
+                    }
+                    var message = {
+                        text: el.message,
+                        time: el.created_at
+                    };
+                    chat._print(data, message, is_owm)
+                });
+                $('.js-collocutor').html(collocutor);
+                $('.js-last_activity').attr('data-datetime', last_activity);
+                chat.timeAgo('.js-last_activity');
+            }
+        },
+        false).request();
+    },
+    searchMessages: function (message) {
+        var getParams = {
+            "chat": $('.message-active').data('room'),
+            "message": message
+        };
+        new GraphQL("query", "chatMessages", getParams, [
+                'items{ user{last_name first_name user_pic last_activity id} business{picture} message user_id }',
+                'own',
+                'token'
+            ], true, false, function () {
+                Loader.stop();
+            }, function (data) {
+                dom.chatbody.html('');
+                if (data.items.length > 0) {
+                    var html = '';
+                    var current_user = '';
+                    var last_activity = '';
+                    var collocutor = '';
+                    $.each(data.items, function (i, el) {
+                        var is_owm = false;
+                        user_message = {
+                            'user_pic_options_md': el.user.user_pic,
+                            'first_name': el.user.first_name,
+                            'last_name': el.user.last_name
+                        };
+                        if (data.own === el.user_id) {
+                            is_owm = true;
+                            user_message = {
+                                'user_pic_options_md': el.business.picture,
+                                'first_name': el.user.first_name,
+                                'last_name': el.user.last_name
+                            };
+                        } else {
+                            collocutor = el.user.first_name + ' ' + el.user.last_name;
+                            last_activity = el.user.last_activity;
+                        }
+                        chat._print(user_message, el.message, is_owm)
+                    });
+                    $('.js-collocutor').html(collocutor);
+                    $('.js-last_activity').attr('data-datetime', last_activity);
+                    chat.timeAgo('.js-last_activity');
+
+                }
+            },
+            false
+        ).request();
+    },
+    searchUser: function (name) {
+        var params = {
+            "business_id": APIStorage.read('business-id'),
+            "name": name,
+        };
+        new GraphQL("query", "chatBusiness", params, [
+            'items{id room user_id business_id business{name business_last_activity picture} user{first_name last_name username last_activity user_pic}  last_message}',
+            'token'
+        ], true, false, function () {
+            Loader.stop();
+        }, function (data) {
+            dom.roomList.html('');
+            if (data.items.length > 0) {
+                $.each(data.items, function (i, el) {
+                    var last_message = el.last_message !== null ? el.last_message : '';
+                    var html = ' <div class="d-flex flex-row px-0 card rounded-0 border-top-0 border-left-0 border-right-0  one-message"' +
+                        ' data-room="' + el.room + '" data-id="' + el.user.username + '"><div class="avatar mt-1 ml-1 mb-1">' +
+                        '<img src="' + el.user.user_pic + '" alt="avatar" style="width: 65px;" class="border rounded"></div>' +
+                        '<div class="name_last pl-2 pt-2"  style="max-width: 60%; overflow: hidden; text-overflow: ellipsis;">' +
+                        '<p class="h6">' + el.user.first_name + ' ' + el.user.last_name + '</p>' +
+                        '<p class="text-muted" style="white-space: nowrap; display: inline-block;"> ' + last_message + '</p>' +
+                        '</div>' +
+                        '<div class="date_newicon ml-auto pr-2">' +
+                        '<small style="color: #0747a6; font-size: 14px; display: block;" class="message_last mt-2 js-lastActivity_user_' + el.user_id + '" data-datetime="' + el.user.last_activity + '"></small>' +
+                        '</div>' +
+                        '</div>'
+                    dom.roomList.append(html);
+                    chat.timeAgo('.js-lastActivity_user_' + el.user_id);
+                });
+                if (localStorage.getItem('chatRoom')) {
+                    activeRoom = localStorage.getItem('chatRoom');
+                    $('.one-message[data-room="' + activeRoom + '"]').trigger('click');
+                }
+            }
+        }, false).request();
+    },
+    getDom: function () {
+        dom = {
+            textarea: $('.chat_message'),
+            button: $('.send_message'),
+            chatbody: $('.chat_body'),
+            searchName: $('.js-search-name'),
+            searchMessage: $('.js-search-message'),
+            roomList: $('.js-rooms-list')
+        }
+    },
+    timeAgo: function (selector) {
+        var nodes = document.querySelectorAll(selector);
+        timeagoInstance.render(nodes, 'en_US');
+        timeago.cancel();
+        timeago.cancel(nodes[0])
+    },
+    scrollToBottom: function () {
+        dom.chatbody.parent().scrollTop(dom.chatbody[0].scrollHeight);
+    },
+    _open: function (data) {
+        socket.emit(socketEvent.open, data);
+    },
+    _room: function () {
+        socket.emit(socketEvent.room, room);
+    },
+    _typing: function () {
+        socket.emit(socketEvent.typing);
+    },
+    _stop_typing: function () {
+        socket.emit(socketEvent.stopTyping);
+    },
+    _send: function (message) {
+        var createParams = {
+            "room": $('.message-active').data('room'),
+            "message": message.text
+        };
+        var send = {
+            room: localStorage.chatRoom,
+            data: {
+                user: {
+                    first_name: user.data.first_name,
+                    last_name: user.data.last_name,
+                    pic: user.data.user_pic_options_md,
+                    username: user.data.username
+                },
+                business: {
+                    name: business.currentData.name,
+                    slug: business.currentData.slug,
+                    picture: business.currentData.picture
+                }
+            },
+            message: {
+                text: message.text,
+                time: Date.now()
+            }
+        };
+        new GraphQL("mutation", "sendMessage", createParams, [
+            'token'
+        ], true, false, function () {
+            Loader.stop();
+        }, function () {
+            socket.emit(socketEvent.send, send);
+        }, false).request();
+    },
+    _print: function (user, message, myself) {
+        var html;
+        if (myself) {
+            html = '<div class="chat_right text-right pt-3 col-md-12" data-timestamp="' + message.time + '">' +
+                '<div class="chat_right-avatar pl-2 pb-1">' +
+                '<img src="' + user.user.pic + '" alt="avatar" style="width: 25px;" class="border rounded">' +
+                '</div>' +
+                '<div class="chat_right-content" style="float: right;">' +
+                '<div class="chat_right_text rounded">' +
+                '<p class="mb-0">' + message.text + '</p>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+            dom.chatbody.append(html);
+        } else {
+            var messages = dom.chatbody.find('>div');
+            if ($(messages[messages.length - 1]).hasClass('chat_left')) {
+                html = ' <div class="chat_left_text rounded" data-timestamp="' + message.time + '">' +
+                    '  <p class="mb-0">' + message.text + '</p>' +
+                    ' </div>';
+                $(messages[messages.length - 1]).find('.chat_left-content').append(html)
+            } else {
+                html = '<div class="chat_left text-left pt-3 col-md-12" data-timestamp="' + message.time + '">' +
+                    '<div class="chat_left-avatar pl-2" style="float: left;"><img src="' + user.user.pic + '" alt="avatar" style="width: 45px;" class="border rounded"></div>' +
+                    '<div class="chat_left-content" style="float: left;">' +
+                    ' <div class="chat_left_text rounded" data-timestamp="' + message.time + '">' +
+                    '  <p class="mb-0">' + message.text + '</p>' +
+                    ' </div>' +
+                    ' </div>' +
+                    '</div>';
+                dom.chatbody.append(html);
+            }
+        }
+        this.scrollToBottom()
+    },
+    searchTimeout: function () {
+
+    },
+    checkTyping: function () {
+        if (typing === false) {
+            typing = true;
+            chat._typing();
+            timeout = setTimeout(chat.timeoutFunction, timeCheck);
+        } else {
+            clearTimeout(chat.timeoutFunction);
+            timeout = setTimeout(chat.timeoutFunction, timeCheck);
+        }
+    },
+    timeoutFunction: function () {
+        typing = false;
+        socket.emit(chat._stop_typing());
+    },
+    checkUserStatus: function (clients) {
+        $.each(clients, function (i, el) {
+            $('.one-message[data-id="' + el + '"] .user-status').addClass('online');
+        });
+    }
+};
+
+$(document).ready(function () {
+    chat = new Chat();
+    chat.init();
+    room = $('.message-active').data('room');
+    chat._room();
+    dom.roomList.on('click', '.one-message', function () {
+        if (!$(this).hasClass('message-active')) {
+            $('.one-message').removeClass('message-active');
+            room = $(this).data('room');
+            localStorage.setItem('chatRoom', room);
+            $(this).addClass('message-active');
+            dom.chatbody.html('');
+            chat._room();
+            dom.button.attr('disabled', false);
+            dom.textarea.attr('disabled', false);
+            chat.getMessages();
+        }
+    });
+
+    socket.on(socketEvent.userJoin, function (data) {
+        // $.notify(data.user.first_name + ' ' + data.user.last_name + ' Now Online', 'success');
+    });
+    socket.on(socketEvent.online, function (data) {
+        chat.checkUserStatus(data.userList)
+    });
+    socket.on(socketEvent.typing, function (data) {
+        if ($('.typingg .' + data.user.user.first_name + '_' + data.user.user.last_name).length === 0) {
+            var html = '<div class="chat_left text-left col-md-12 pt-2 ' + data.user.user.first_name + '_' + data.user.user.last_name + '"><div class="chat_left-avatar pl-2" style="float: left;">' +
+                '<img src="' + data.user.user.pic + '" alt="avatar" style="width: 45px;" class="border rounded">' +
+                '</div><div class="chat_left-content" style="float: left;"> <div class="chat_left_text rounded">  ' +
+                '<div class="spinner"> <div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' +
+                '</div> </div></div>'
+            $('.typingg').append(html);
+        }
+    });
+
+    socket.on(socketEvent.stopTyping, function (data) {
+        $('.' + data.user.user.first_name + '_' + data.user.user.last_name).hide(300);
+        setTimeout(function () {
+            $('.' + data.user.user.first_name + '_' + data.user.user.last_name).remove();
+        }, 300)
+    });
+
+    socket.on(socketEvent.newMessage, function (data) {
+        chat._print(data.user, data.message, false);
+    });
+
+    socket.on(socketEvent.leave, function (data) {
+    });
+
+    socket.on(socketEvent.leaveRoom, function (data) {
+        // $.notify(data.user.first_name + ' ' + data.user.last_name + ' leave', 'success');
+    });
+
+    socket.on(socketEvent.enterRoom, function (data) {
+        chat.checkUserStatus(data.userList);
+        // $.notify(data.user.first_name + ' ' + data.user.last_name + ' join', 'success');
+    });
+    dom.searchName.on('input', function () {
+        var input = $(this).val()
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(function () {
+            chat.searchUser(input);
+        }, 500);
+    });
+    dom.searchMessage.on('input propertychange', function (e) {
+        if ($(this).val() === '') {
+            chat.searchMessages($(this).val());
+        }
+    });
+    dom.searchMessage.on('keyup', function (e) {
+        if (e.keyCode === 13) {
+            chat.searchMessages($(this).val());
+        }
+    });
+    dom.textarea.on('keyup', function (e) {
+        if (e.keyCode === 13 && $(this).val() !== '') {
+            var message = {
+                text: $(this).val(),
+                time: Date.now()
+            };
+            user_info = {
+                user: {
+                    first_name: user.data.first_name,
+                    last_name: user.data.last_name,
+                    pic: user.data.user_pic_options_md,
+                    username: user.data.username
+                },
+                business: {
+                    name: business.currentData.name,
+                    slug: business.currentData.slug,
+                    picture: business.currentData.picture
+                }
+            };
+            chat._send(message);
+            chat._print(user_info, message, true);
+            $(this).val('');
+            chat._stop_typing();
+        } else {
+            chat.checkTyping();
+        }
+    });
+    dom.button.on('click', function () {
+        var val = $(this).prev();
+        if (val.val() !== '') {
+            var message = {
+                text: val.val(),
+                time: Date.now()
+            };
+            user_info = {
+                user: {
+                    first_name: user.data.first_name,
+                    last_name: user.data.last_name,
+                    pic: user.data.user_pic_options_md,
+                    username: user.data.username
+                },
+                business: {
+                    name: business.currentData.name,
+                    slug: business.currentData.slug,
+                    picture: business.currentData.picture
+                }
+            };
+            chat._send(message)
+            chat._print(user_info, message, true);
+            val.val('');
+            chat._stop_typing();
+        }
+    });
+});

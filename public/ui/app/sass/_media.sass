@@ -1,0 +1,106 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+.clear-md-padding
+	padding: 0px!important
+.clear-sm-padding
+	padding: 0 15px!important
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.clear-md-padding
+		padding: 0 15px!important
+	.clear-sm-padding
+		padding: 0 15px!important
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	.clear-md-padding
+		padding: 15px!important
+	.clear-sm-padding
+		padding: 0 15px!important
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.clear-md-padding
+		padding: 0 15px!important
+	.clear-sm-padding-right
+		padding-right: 0px!important
+	.clear-sm-padding
+		padding: 0px!important
+	.clear-sm-vertical-offset
+		margin-top: 0px!important
+	.title-icon
+    max-width: 19px
+	.clear-md-padding
+		padding: 15px!important
+	.text-small
+		font-size: 13px
+	.logo-text
+		display: none
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	div.form-tab-menu div.list-group > a.active:after
+  		right: -2%
+	.links-container
+		border-bottom: 2px solid $grey
+		z-index: 200
+		background-color: #fff
+		text-align: center
+		overflow: hidden
+	.clear-xs-offset
+		padding-left: 0px
+		padding-right: 0px
+		margin-left: 0px
+		margin-right: 0px
+	.clear-xs-padding
+		padding: 0!important
+	.clear-xs-padding-right
+		padding-right: 0!important
+	.schedule-card
+		padding-right: 15px
+	.title-icon
+    	max-width: 17px
+	.clear-sm-padding
+		padding: 0 15px!important
+	.border-xs-right
+		border-right: 1px solid #f2f2f2!important
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+	.small-text
+		font-size: 10px
+	.clear-sm-padding
+		padding: 0 15px!important
+	textarea
+		font-size: 12px
+	.days-list-container
+		margin-left: 8px
+
+/*==========  Mobile First  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px)
+	/**/
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px)
+	/**/
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px)
+	/**/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-height : 800px)
+	body, html
+  		height: initial

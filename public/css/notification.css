@@ -1,0 +1,19 @@
+.notification {
+    background-color: #1d90ed;
+    position: absolute;
+    right: 10px;
+    font-size: 15px!important;
+    font-family: sans-regular;
+    text-shadow: none;
+    display: inline;
+    padding: .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    -webkit-border-radius: .25em;
+    border-radius: .25em;
+}

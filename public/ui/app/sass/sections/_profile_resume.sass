@@ -1,0 +1,165 @@
+/* Schedule card*/
+.schedule-card
+	padding-left: 0px
+	border-radius: 5px
+	.left-side,.right-side
+		margin-top: 15px
+	li img
+		margin-right: 10px
+	li span
+		margin-right: 10px
+		font-family: sans-semibold
+	li
+		color: #7b7b7b
+		font-family: sans-regular
+		font-size: 14px
+		font-weight: 400
+		line-height: 14px
+	li.text-blue
+		color: $blue
+
+.schedule-card.top-offset
+	margin-top: 30px
+
+.schedule-card.bottom-offset
+	margin-bottom: 30px
+
+.list
+	list-style-type: none
+	padding-left: 0
+	text-align: left
+	li
+		height: 40px
+		padding-top: 10px
+
+/* Profile info section */
+.profile-info-section
+	margin-bottom: 70px
+	.avatar-img
+		display: block
+		margin: 0 auto
+
+.profile-info-section.large
+	margin-bottom: 150px
+
+.profile-info-text
+	color: #7b7b7b
+	font-family: sans-regular
+	font-size: 14px
+	font-weight: 400
+	line-height: 14px
+
+/* text under the user avatar*/
+.avatar-title
+	color: #1d90ed
+	font-family: sans-regular
+	font-size: 17px
+	font-weight: 300
+	line-height: 14px
+	text-align: center
+	margin-bottom: 10px
+	margin-top: 10px
+
+/* icons */
+.up-icon, .down-icon
+	max-width: 20px
+	margin-top: 5px
+
+.edit-icon
+	margin-left: 50px
+	margin-top: 5px
+
+.title-icon
+	max-width: 23px
+
+/* profile-info-table-container: tables crew member, boston univercity*/
+.profile-info-table-container
+  margin-top: 30px
+  .profile-info-table
+    height: 60px
+    padding: 0px
+    .cell
+      display: flex
+      align-items: center
+      flex-direction: row
+      height: 60px
+      border: 0px
+      border-bottom: 1px solid $tableBorder
+      border-left: 1px solid $tableBorder
+      transition: all 0.25s ease
+      &:last-child
+        border-right: 1px solid $tableBorder
+      .name
+        font-size: 14px
+        font-family: sans-regular
+      .control
+        padding-left: 0px
+        margin-right: 45px
+        .control-indicator
+          left: 8px
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	div.form-tab-menu div.list-group > a.active:after
+  	right: -2%
+	.links-container
+		border-bottom: 2px solid $grey
+		z-index: 200
+		background-color: #fff
+		text-align: center
+		overflow: hidden
+	.availability-prefernces
+		.days-table
+			flex-wrap: wrap
+			height: auto
+	.profile-info-text
+		margin-top: 10px
+	.profile-info-section
+    	margin-bottom: 40px
+	.days-table .profile-info-text
+		word-wrap: break-word
+		padding: 0px 5px
+	.schedule-card li span
+		margin-right: 50px
+	.profile-info-table-container
+		margin-right: 15px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px)
+	.edit-icon
+		margin-left: 30px
+	.down-icon, .up-icon
+		margin-top: 8px
+	.title>img
+		margin-right: 0px
+	.schedule-card li span
+		margin-right: 0px
+
+@media only screen and (max-width : 320px)
+	.profile-info-table-container
+		.name
+			overflow: hidden
+			height: 25px
+			position: relative
+			right: 4px
+		.profile-info-table .cell .control
+			margin-right: 37px
+			.control-indicator
+				width: 20px
+				height: 20px
+				&:after
+					left: 6px
+					width: 8px
+					height: 14px

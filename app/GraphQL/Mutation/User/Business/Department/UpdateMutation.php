@@ -1,0 +1,154 @@
+<?php
+
+namespace App\GraphQL\Mutation\User\Business\Department;
+
+use App\Business\Administrator;
+use App\Business\Department;
+use App\Business\DepartmentLocation;
+use App\GraphQL\Auth;
+use App\GraphQL\AuthBusiness;
+use GraphQL;
+use GraphQL\Type\Definition\Type;
+use Folklore\GraphQL\Support\Mutation;
+use Illuminate\Support\Facades\DB;
+
+class UpdateMutation extends Mutation
+{
+    //use JWT authorization
+    use Auth;
+    //use business authorization
+    use AuthBusiness;
+    
+    protected $attributes = [
+        'name' => 'Update Business Department'
+    ];
+    
+    public function type()
+    {
+        return GraphQL::type('BusinessDepartment');
+    }
+    
+    /**
+     * @return array
+     */
+    protected function rules()
+    {
+        return [
+            'name' => ['required_without:name_fr', 'string'],
+            'name_fr' => ['required_without:name', 'string'],
+        ];
+    }
+    
+    /**
+     * @return array
+     */
+    public function args()
+    {
+        return [
+            'id' => [
+                'type' => Type::nonNull(Type::id()),
+                'description' => 'Department id'
+            ],
+            'business_id' => [
+                'type' => Type::nonNull(Type::id()),
+                'description' => 'Business id'
+            ],
+            'name' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Department Name'
+            ],
+            'name_fr' => [
+                'type' => Type::nonNull(Type::string()),
+                'description' => 'Department Name Fr'
+            ],
+            'status' => [
+                'type' => Type::int(),
+                'description' => 'Department type'
+            ],
+            'department_locations' => [
+                'type' => Type::string(),
+                'description' => 'Assign locations'
+            ],
+            'department_locations_detach' => [
+                'type' => Type::string(),
+                'description' => 'Assign locations'
+            ]
+        ];
+    }
+    
+    /**
+     * @param $root
+     * @param $args
+     * @return array|null
+     */
+    public function resolve($root, $args)
+    {
+        //set authorized roles
+        $this->roles = [
+            Administrator::MANAGER_ROLE,
+            Administrator::FRANCHISE_ROLE
+        ];
+        //set permissions for this object
+        $this->permissions = [
+            'departments'
+        ];
+        //set business ID
+        $this->businessID = $args['business_id'];
+        //check permissions
+        $this->check();
+        
+        DB::beginTransaction();
+        try {
+            //DepartmentLocation::where('department_id', $args['id'])->delete();
+            
+            $update = [];
+            foreach ($args as $field => $value) {
+                if ($field != 'business_id' && $field != 'id' && $field != 'department_locations' && $field !== 'department_locations_detach') {
+                    $update[$field] = $value;
+                }
+            }
+            
+            Department::where([
+                'id' => $args['id'],
+                'business_id' => $args['business_id']
+            ])->update($update);
+
+            if (isset($args['department_locations_detach']) && !empty($args['department_locations_detach'])) {
+                DepartmentLocation::where('department_id', $args['id'])->whereIn('location_id', explode(',', $args['department_locations_detach']))->delete();
+            }
+
+            if (isset($args['department_locations']) && !empty($args['department_locations'])) {
+                $locations = explode(',', $args['department_locations']);
+                $locationsExist = DepartmentLocation::whereIn('location_id', $locations)->get()->pluck('location_id')->toArray();
+                $dataInsert = [];
+                foreach ($locations as $location) {
+                    if (!in_array($location, $locationsExist)) {
+                        $dataInsert[] = array(
+                            'department_id' => $args['id'],
+                            'location_id' => $location
+                        );
+                    }
+                }
+                $departmentLocation = new DepartmentLocation();
+                $departmentLocation->insert($dataInsert);
+            }
+            DB::commit();
+        } catch (Exception $e) {
+            DB::rollback();
+            return null;
+        }
+        
+        $data = Department::where([
+            'id' => $args['id'],
+            'business_id' => $args['business_id']
+        ])->first();
+        
+        if (!$data) {
+            return null;
+        }
+        
+        $data['token'] = $this->token;
+        
+        return $data;
+    }
+}

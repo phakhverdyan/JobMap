@@ -1,0 +1,72 @@
+.map-popup
+	background: #ffffff
+	border-radius: 5px
+
+.map-popup-header
+	background: url('./../img/ford-company.png')
+	width: 361px
+	height: 186px
+	.company-logo
+		text-align: center
+		padding-top: 40px
+	.title
+		height: 17px
+		color: #ffffff
+		font-family: sans-regular
+		font-size: 16px
+		font-weight: 600
+		margin-top: 10px
+.map-popup-content
+	padding: 15px
+	p
+		width: 300px
+		height: 35px
+		color: #7b7b7b
+		font-family: sans-regular
+		font-size: 14px
+		font-weight: 400
+		line-height: 44px
+		margin: 0
+		span
+			overflow: hidden
+		img
+			margin-right: 15px
+	&:after
+		content: ''
+		position: absolute
+		left: 5px
+		top: 65%
+		z-index: 100
+		margin-top: -13px
+		border-left: 0
+		border-bottom: 13px solid transparent
+		border-top: 13px solid transparent
+		border-right: 12px solid #fff
+.map-popup-footer
+	display: inline-block
+	padding: 20px 0px
+	text-align: center
+	width: 100%
+	background: $dark-blue
+	border-bottom-left-radius: 5px
+	border-bottom-right-radius: 5px
+	cursor: pointer
+	&:hover
+		background: $blue
+	a
+		color: $white
+		font-family: sans-regular
+		font-size: 14px
+		font-weight: 600
+		text-transform: uppercase
+		text-decoration: none
+
+
+.gm-style-iw
+	top: 200px!important
+	position: absolute!important
+	left: 202px!important
+	width: 384px!important
+	padding-left: 15px
+#switch-filter
+	cursor: pointer

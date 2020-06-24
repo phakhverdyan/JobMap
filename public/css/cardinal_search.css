@@ -1,0 +1,25 @@
+.search-tabs {
+    font-size: 17px;
+}
+
+.search-tabs .tab-item {
+    display: inline-block;
+    margin-right: 15px;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+    color: #333;
+    line-height: 5px;
+    padding: 15px 10px 12px;
+}
+
+.search-tabs .tab-item.active {
+    border-bottom: 2px solid #3a67ff;
+    color: #3a67ff;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.search-tabs .tab-item:hover:not(.active) {
+    color: #7897ff;
+}

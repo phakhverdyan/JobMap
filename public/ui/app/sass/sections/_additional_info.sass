@@ -1,0 +1,46 @@
+@import "./../vars"
+
+.additional-info .input-row
+	margin-top: 10px
+
+.additional-info-second
+	.row:first-child
+		.title
+			margin-top: 25px
+	.title
+		margin-top: 0px
+	.distinctions
+		margin-top: 35px
+	.form-checkbox
+		height: 60px
+	.upload
+		right: 5px
+		margin-right: 0px
+	.input-row
+		margin-top: 25px
+	.input-form
+		margin-bottom: 0px
+	.ui-widget.ui-widget-content
+		background-color: #fff
+	.ui-widget-header
+		background-color: $blue
+	.additional-info-second .form-checkbox
+		padding-left: 35px
+	.side-lines
+		&:after, &:before
+			width: 220%
+.additional-info-third
+	.input-group textarea
+		height: 220px
+/* Extra Small Devices, Phones */
+
+@media only screen and (max-width : 480px)
+	.additional-info,.additional-info-second
+		.custom-select-wrapper
+			top: 10px
+			right: 0px
+	.form-control
+		font-size: 12px
+	.additional-info-second .form-checkbox
+		padding-left: 15px
+

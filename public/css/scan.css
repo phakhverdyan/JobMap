@@ -1,0 +1,425 @@
+
+/* latin */
+@font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Cabin'), local('Cabin-Regular'), url(../fonts/Cabin/cabin-regular.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+    font-family: 'Cabin';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: local('Cabin Bold'), local('Cabin-Bold'), url(../fonts/Cabin/cabin-bold.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+.scan {
+    font-family: "Cabin", sans-serif!important;
+}
+
+.scan .input-btn-clear{
+    z-index: 99;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+#widget-user-location{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.scan .input-btn-clear button.btn{
+    padding-top: 8px;
+    background-color: #f4f4f4;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.scan .form-control:focus {
+    box-shadow: none !important;
+    border-color: #003fae !important
+}
+
+/* Button */
+
+.scan .btn.btn-primary {
+    background-color: #003fae;
+    border-color: #003fae;
+    padding: 5px 20px;
+}
+
+/* Navigation */
+
+
+.scan .navbar-brand img {
+    width: 35px;
+}
+
+.scan .navbar-brand a {
+    color: #444444;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+/* Job profile */
+
+.scan .job {
+    background-color: #f3f3f3;
+    padding: 50px 0;
+}
+
+.scan .job__profile {
+    display: flex;
+    align-items: center;
+}
+
+.scan .job__profile-logo {
+    height: 150px;
+    width: 150px;
+    background: url('../img/business-logo.png') no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+.scan .job__profile__info {
+    margin-left: 20px;
+}
+
+.scan .job__profile__info-name {
+    font-weight: bold;
+}
+
+
+.scan .job__profile__info-location .flag img {
+    width: 20px;
+    margin-right: 5px;
+    margin-bottom: 2px;
+}
+
+.scan .job__position {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.scan .job__position-open {
+    font-weight: bold;
+}
+
+.scan .job-spontaneous-applicants img {
+    width: 50px;
+}
+
+.scan .job-spontaneous-applicants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgba(46, 203, 111, 0.2);
+    padding: 50px;
+    border-radius: 5px;
+    color: #2ecc71;
+}
+
+.scan .job-spontaneous-applicants p {
+    font-size: 16px;
+}
+
+.scan .job-spontaneous-applicants h3 {
+    font-size: 23px;
+    color: #2ecc71;
+}
+
+.scan .job-form label {
+    color: #003fae;
+    font-weight: bold;
+}
+
+.scan .job-form small {
+    color: #888888;
+}
+
+.scan .job-form__choose-photo:hover{
+    cursor: pointer;
+}
+.scan .job-form__choose-photo {
+    border: 2px dashed #003fae;
+    padding: 60px 0;
+    text-align: center;
+    background-color: rgba(0, 64, 174, 0.1);
+}
+
+.scan .job-form__choose-photo label:hover{
+    cursor: pointer;
+}
+.scan .job-form__choose-photo label {
+    color: #003fae;
+}
+
+.scan .job-form__choose-photo #file {
+    display: none;
+}
+
+.scan .job-form__upload-resume:hover{
+    cursor: pointer;
+}
+.scan .job-form__upload-resume {
+    background-color: #003fae;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.scan .job-form__upload-resume #file {
+    display: none;
+}
+
+.scan .job-form__upload-resume label:hover{
+    cursor: pointer;
+}
+.scan .job-form__upload-resume label {
+    color: #fff;
+    padding: 20px 0;
+}
+
+.scan .job-form__upload-resume label span img {
+    width: 30px;
+    margin-right: 7px;
+}
+
+.scan .job-form__phone-number .selectpicker {
+    display: none;
+}
+
+.scan .job-form__phone-number .dropdown-toggle::after {
+    display: none;
+}
+
+.scan .job-form__phone-number .phone-number {
+    /*height: 41px;*/
+}
+
+.scan .job-form__phone-number .bootstrap-select .dropdown-toggle:focus, .bootstrap-select>select.mobile-device:focus+.dropdown-toggle {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.scan .job-form__phone-number .bootstrap-select .btn {
+    height: 41px;
+}
+
+.scan .job-form__apply-button {
+    width: 100%;
+    padding: 20px 0px !important;
+}
+
+@media (max-width: 768px) {
+    .btn.btn-primary.btn-block.avatar-save{
+        margin-top: 25px;
+    }
+    .table td{
+        padding: 8px 0;
+    }
+    .card-header{
+        padding: 10px 0;
+    }
+    .card-header > h5 > span{
+        display: none;
+    }
+    .scan .job .row .col-md-5 {
+        padding-top: 15px;
+    }
+    .scan .job .job__profile {
+        display: block;
+        /*text-align: center;*/
+    }
+    .scan .job .job__profile .job__profile-logo{
+       margin: 0 auto;
+    }
+    .scan .job .job__profile .job__profile__info{
+       margin: 15px 0;
+    }
+    .scan .job-form .row .col-md-5 {
+        order: 1;
+    }
+
+    .scan .job-form .row .col-md-7 {
+        order: 2;
+    }
+
+    .scan .job-form .job-spontaneous-applicants {
+        margin-bottom: 40px !important;
+    }
+}
+
+/* Alert */
+
+.scan .almost-done__alert {
+    border: 2px solid #cecece;
+    background-color:rgba(206, 206, 206, 0.2);
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    color: #888888;
+}
+
+.scan .almost-done__alert h4 {
+    font-weight: bold;
+}
+
+.scan .almost-done__page-header {
+    text-align: center;
+}
+
+.scan .almost-done__page-header img {
+    width: 20%;
+}
+
+.scan .almost-done__page-header h3 {
+    color: #444444;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.scan .almost-done__page-header p {
+    color: #888888;
+}
+
+.scan button span img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.scan .btn.playstore-button {
+    background-color: #003fae;
+    border-color: #003fae;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+.scan .playstore-button:hover {
+    background-color: #013794;
+    border-color: #013794;
+}
+
+.scan .btn.appstore-button {
+    background-color: #cecece;
+    border-color: #cecece;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 16px;
+}
+
+.scan .appstore-button:hover {
+    background-color: #888888;
+    border-color: #888888;
+}
+
+.scan .almost-done__allow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888888;
+}
+
+.scan .almost-done__allow .company-logo {
+    width: 40px;
+    height: 40px;
+    background-color: #cecece;
+    border-radius: 5px;
+    margin: 0 10px;
+}
+
+.scan .almost-done__allow .company-name {
+    font-weight: bold;
+    color: #444444;
+}
+
+.scan .almost-done__feature-item {
+    border: 2px solid #cecece;
+    display: flex;
+    color: #888888;
+    padding: 20px;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.scan .almost-done__feature-item img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.scan .almost-done p {
+    color: #888888;
+    font-size: 16px;
+}
+
+.scan .no-photo__alert {
+    border: 2px solid #f1c40f;
+    background-color:rgba(241, 196, 15, 0.2);
+    padding: 40px;
+    border-radius: 5px;
+    text-align: center;
+    color: #f1c40f;
+}
+
+.scan .no-photo__alert h4 {
+    font-weight: bold;
+}
+
+/* Add profile picture form */
+
+.scan .no-photo-form__choose-photo {
+    border: 2px dashed #003fae;
+    padding: 30px 0;
+    text-align: center;
+    background-color: rgba(0, 64, 174, 0.1);
+}
+
+.scan .no-photo-form__choose-photo label {
+    color: #003fae;
+}
+
+.scan .no-photo-form__choose-photo #file {
+    display: none;
+}
+
+.scan .no-photo .btn.btn-primary {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 10px 20px;
+    background-color: #cecece;
+    border-color: #cecece;
+}
+
+.scan .no-photo .btn.btn-primary:hover {
+    background-color: #003fae;
+    border-color: #003fae;
+}
+
+.scan .no-photo .btn span img {
+    width: 20px;
+}
+
+.scan .no-photo__page-header {
+    text-align: center;
+}
+
+.scan .no-photo__page-header img {
+    width: 30%;
+}
+
+.scan .no-photo__page-header h3 {
+    color: #003fae;
+    font-weight: bold;
+    margin-top: 10px;
+}

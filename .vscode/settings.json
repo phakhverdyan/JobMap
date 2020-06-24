@@ -1,0 +1,18 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#392A2F",
+        "titleBar.activeBackground": "#4F3A42",
+        "titleBar.activeForeground": "#FBFAFA"
+    },
+    "i18n-ally.localesPaths": [
+        "public/langs",
+        "resources/lang",
+        "public/img/langs",
+        "public/js/ckeditor/lang",
+        "public/libs/colorpicker/i18n",
+        "public/libs/select2/js/i18n",
+        "public/ui/app/img/langs",
+        "public/ui/app/libs/jquery-ui/ui/i18n",
+        "public/ui/app/libs/jquery-ui/ui/minified/i18n"
+    ]
+}

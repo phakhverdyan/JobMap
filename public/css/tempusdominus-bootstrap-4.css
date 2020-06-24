@@ -1,0 +1,27 @@
+.bootstrap-datetimepicker-widget a[data-action="togglePicker"][title="Select Time"] span {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+.bootstrap-datetimepicker-widget a[data-action="togglePicker"][title="Select Time"]::after {
+    display: inline-block;
+    vertical-align: middle;
+    content: 'Select Time';
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.bootstrap-datetimepicker-widget a[data-action="togglePicker"][title="Select Date"] span {
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+}
+
+.bootstrap-datetimepicker-widget a[data-action="togglePicker"][title="Select Date"]::after {
+    display: inline-block;
+    vertical-align: middle;
+    content: 'Select Date';
+    font-size: 16px;
+    margin-left: 5px;
+}

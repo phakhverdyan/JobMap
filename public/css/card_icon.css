@@ -1,0 +1,39 @@
+
+.card-icon-wrapper{
+    position: relative;
+    padding-left: 40px;
+}
+.card-icon-wrapper .card-type-icon {
+    height:23px;
+    width:32px;
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    background: url("../images/cards.png") no-repeat 0px 23px;
+    pointer-events: none;
+    -webkit-transition: opacity .15s linear;
+    -moz-transition: opacity .15s linear;
+    -ms-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}
+
+.card-icon-wrapper .card-type-icon.card-type-Visa {
+    background-position:0px 0px;
+}
+.card-icon-wrapper .card-type-icon.card-type-MasterCard {
+    background-position:-32px 0px;
+}
+.card-icon-wrapper .card-type-icon.card-type-AmericanExpress {
+    background-position:-64px 0px;
+}
+.card-icon-wrapper .card-type-icon.card-type-Discover {
+    background-position:-96px 0px;
+}
+.card-icon-wrapper .card-type-icon.card-type-DinersClub {
+    background-position:-128px 0px;
+}
+.card-icon-wrapper .card-type-icon.card-type-JCB {
+    background-position:-160px 0px;
+}

@@ -1,0 +1,79 @@
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700');
+  @font-face {
+    font-family: "roboto-example";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot");
+    src: url("../fonts/RobotoRegular/RobotoRegular.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoRegular/RobotoRegular.woff") format("woff"), url("../fonts/RobotoRegular/RobotoRegular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "roboto-example";
+    font-weight: bold;
+    font-style: normal;
+    src: url("../fonts/RobotoBold/RobotoBold.eot");
+    src: url("../fonts/RobotoBold/RobotoBold.eot?#iefix") format("embedded-opentype"), url("../fonts/RobotoBold/RobotoBold.woff") format("woff"), url("../fonts/RobotoBold/RobotoBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "sans-regular";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/OpenSans/OpenSans-Regular.eot");
+    src: url("../fonts/OpenSans/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Regular.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "sans-light";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/OpenSans/OpenSans-Light.eot");
+    src: url("../fonts/OpenSans/OpenSans-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Light.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Light.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "sans-semibold";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/OpenSans/OpenSans-SemiBold.eot");
+    src: url("../fonts/OpenSans/OpenSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-SemiBold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-SemiBold.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "sans-bold";
+    font-weight: normal;
+    font-style: normal;
+    src: url("../fonts/OpenSans/OpenSans-Bold.eot");
+    src: url("../fonts/OpenSans/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSans/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSans/OpenSans-Bold.ttf") format("truetype");
+  }
+  @font-face{
+    font-family: 'AvenirNext';
+    src: url("../fonts/AvenirNext/AvenirNextLTPro-Regular.otf");
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/ProximaNova/proxima-nova.woff") format("woff");
+    font-weight: normal;
+    font-style: normal
+  }
+  @font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/ProximaNova/proxima-nova-light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal
+  }
+  @font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/ProximaNova/proxima-nova-semibold.woff") format("woff");
+    font-weight: 500;
+    font-style: normal
+  }
+  @font-face {
+    font-family: 'ProximaNova';
+    src: url("../fonts/ProximaNova/proxima-nova-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal
+  }
+  @font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url("../fonts/glyphicons-halflings-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal
+  }

@@ -1,0 +1,199 @@
+.settings-buttons
+	display: flex
+	justify-content: center
+	margin: 15px 0
+	.settings-button
+		font-size: 13px!important
+		color: $blue!important
+		margin: 0 10px
+		width: 180px!important
+		&:hover
+			color: $white!important
+	.switch_left
+		text-align: left!important
+		width: 50%!important
+	.switch_right
+		text-align: left!important
+		width: 50%!important
+	.switch-field label
+		background: $white
+		border: 2px solid $blue
+.settings-title-container
+	margin: 10px 0
+.settings-title
+	color: #7b7b7b
+	font-family: sans-regular
+	font-size: 20px
+	font-weight: 400
+	margin: 0px
+.settings-sub-title
+	color: #7b7b7b
+	font-family: sans-regular
+	font-size: 14px
+	font-weight: 300
+	margin: 0px
+.settings-label
+	visibility: hidden
+.active-cell
+	.settings-label
+		visibility: visible
+.settings-label
+	width: 116px
+	height: 41px
+	border-radius: 3px
+	background-color: #1665aa
+	p
+		margin: 5px 0px
+		color: #ffffff
+		font-family: sans-regular
+		font-size: 16px
+		font-weight: 300
+		line-height: 26px
+		text-align: center
+		img
+			margin-right: 10px
+.settings-label.visible
+	visibility: visible
+.settings-label.light
+	background-color: #1d90ed
+.active-cell
+	.settings-title
+		color: #fff
+	.settings-sub-title
+		color: #fff
+.settings-icon
+	margin-top: 15px
+	.icon
+		width: 55px
+		height: 55px
+		position: inherit
+	.workers_icon
+		background: url('./../img/settings/workers.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.msg_icon
+		background: url('./../img/settings/mail.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.user_icon
+		background: url('./../img/settings/user.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.employee_icon
+		background: url('./../img/settings/employee.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.interview_icon
+		background: url('./../img/settings/interview.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.users_icon
+		background: url('./../img/settings/users.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+.active-cell
+	.msg_icon
+		background: url('./../img/settings/mail_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.user_icon
+		background: url('./../img/settings/user_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.employee_icon
+		background: url('./../img/settings/employee_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.interview_icon
+		background: url('./../img/settings/interview_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.users_icon
+		background: url('./../img/settings/users_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+	.workers_icon
+		background: url('./../img/settings/workers_white.svg')
+		background-repeat: no-repeat
+		background-position: center center
+		background-size: contain
+
+.settings-links
+	display: flex
+	flex-direction: row
+	li
+		padding: 0 10px
+		font-family: "sans-regular"
+		font-size: 15px
+		font-weight: 400
+		color: #7b7b7b
+		margin-top: 15px
+.switch-lang-icon
+  width: 30px
+.settings-button.full-width
+	width: 100%!important
+
+
+.table.settings-table
+	height: 170px
+	margin: 0
+	.settings-cell
+		display: flex
+		flex-direction: column
+	  justify-content: center
+		height: inherit
+
+.table.search-features
+	height: 100px
+	margin: 0
+	.settings-cell
+		display: flex
+		flex-direction: column
+	  justify-content: center
+		height: inherit
+
+@media only screen and (max-width : 480px)
+	.settings-buttons
+		flex-wrap: wrap
+	.settings-button
+		width: 70%!important
+	.table.settings-table
+		height: 175px
+	.settings-buttons .days-table-container
+		margin: 0
+	.table.settings-table
+		.settings-icon
+			width: auto
+		.settings-title
+			font-size: 15px
+		.settings-sub-title
+			font-size: 11px
+	.settings-links
+		flex-direction: column
+	.settings-label
+		width: auto
+		p
+			padding: 0 5px
+@media only screen and (max-width : 375px)
+	.settings-title
+		line-height: 15px
+	.settings-label
+		height: 30px
+		p
+			margin: 0
+			font-size: 15px
+			img
+				margin: 0
+			span
+				display: none

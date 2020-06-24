@@ -1,0 +1,108 @@
+.jack .ms-helper{
+		font-size: 16px;
+    	top: -25px;
+	}
+	.jack{
+      padding: 0px 12px;
+    }
+	.jack .ms-sel-item{
+
+      color: #fff;
+      background-color: #4266ff;
+      border-color: #4266ff;
+      font-weight: 400;
+        padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: 10px;
+
+    /*border-radius: .25rem;*/
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 3.5px 5px 1px 0;
+    }
+    .jack .ms-sel-item:hover{
+          color: #fff;
+          background-color: #2f4fd7;
+          border-color: #2f4fd7;
+    }
+    .jack .ms-close-btn{
+      background-image: url(../img/error.svg)!important;
+      background-repeat: no-repeat!important;
+      width: 18px!important;
+      height: 18px!important;
+      float: right;
+      margin: 2px -3px 0px 14px!important;
+      background-position: 0 0!important;
+      opacity: 0.3!important;
+      background-size: cover!important;
+    }
+    .jack .ms-sel-ctn input[type=text]{
+      background-color: #f4f4f4;
+      box-shadow: none;
+      border-radius: 10px;
+      border:none;
+      color: #495057;
+      padding: 8px 9px;
+
+      display: block;
+      width: 100%!important;
+      /*padding: .375rem .55rem;*/
+      /*font-size: 1rem;*/
+      /*line-height: 1.5;*/
+      /*color: #495057;*/
+      /*background-color: #fff;*/
+      /*background-image: none;*/
+      background-clip: padding-box;
+      /*border-radius: .25rem;*/
+      /*transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;*/
+    }
+
+    .jack .ms-sel-ctn input[type=text]:focus,
+    .jack .ms-sel-ctn input[type=text]:active{
+      background-color: inherit!important;
+    }
+
+      .city_jack .ms-sel-item{
+      font-weight: 400;
+        padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    -webkit-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 3.5px 5px 1px 0;
+    }
+    .city_jack .ms-sel-ctn input[type=text]{
+      display: block;
+    width: 100%;
+    padding: .375rem .55rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border-radius: .25rem;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    }
+    .city_jack .ms-helper{
+    font-size: 16px;
+      top: -25px;
+  }
+  .city_jack{
+      padding: 0px 12px;
+    }
+    .city_jack .ms-close-btn{
+      background-image: url(../img/error.svg)!important;
+      background-repeat: no-repeat!important;
+      width: 18px!important;
+      height: 18px!important;
+      float: right;
+      margin: 2px -3px 0px 14px!important;
+      background-position: 0 0!important;
+      opacity: 0.3!important;
+      background-size: cover!important;
+    }

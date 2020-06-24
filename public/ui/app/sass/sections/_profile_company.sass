@@ -1,0 +1,215 @@
+.profile-company
+    margin-top: 20%
+    .card
+        background: #fff
+        z-index: 1
+        border-radius: 5px
+        padding: 10px
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+        overflow: hidden
+        .header-title
+            margin-top: 25px
+            span
+                width: 350px
+                height: 24px
+                color: #7b7b7b
+                font-family: sans-semibold
+                font-size: 24px
+                font-weight: 600
+    .card-header
+        padding: 15px 25px
+        .header-title
+            padding: 0 10px
+            font-weight: 400
+            font-family: sans-regular
+            color: #7b7b7b
+        .header-title.large
+            font-size: 20px
+        .header-title.small
+            font-size: 16px
+            font-family: sans-semibold
+        .header-title.blue
+            color: #2380ed
+    .company-logo
+        background: #fff
+        text-align: center
+        padding-top: 40px
+    .title
+        font-size: 16px
+        font-weight: 400
+        color: #7b7b7b
+        font-family: sans-regular
+    .info-text
+        width: 91px
+        height: 46px
+        color: #2380ed
+        font-family: sans-regular
+        font-size: 14px
+        font-weight: 400
+        line-height: 35px
+    .text
+        color: #7b7b7b
+        font-family: sans-regular
+        font-size: 17px
+        font-weight: 400
+        line-height: 26px
+        padding: 60px
+    .logo-wrapper
+        width: 20px
+        display: inline-block
+    .divide-line
+        border-color: $light-grey
+        width: 100%
+        margin: 10px 0px
+    .filter-list
+        height: 70vh
+        padding: 25px
+        .title
+            margin-left: 15px
+    .button
+        display: block
+        text-align: center
+        color: #7b7b7b
+        font-family: sans-semibold
+        font-size: 16px
+        font-weight: 600
+        line-height: 43px
+        padding: 5px
+        &:hover
+            color: $white
+        img
+            width: 19px
+            height: 25px
+            margin-right: 10px
+    .button-default
+        border-radius: 5px
+        background-color: #f5f5f5
+        border: #f5f5f5
+        font-size: 16px
+        font-family: sans-regular
+        font-weight: 400
+        padding: 5px 20px
+        width: 110px
+        height: 35px
+        color: #7b7b7b
+        display: block
+        text-decoration: none
+        margin: 15px 0
+    .button-group
+        margin-left: 5%
+    .input-form
+        margin-top: 35px
+        margin-bottom: 15px
+    .item
+        height: 23vh
+        border-bottom: 1px solid $grey
+        &:first-child
+            border-right: 1px solid $grey
+    .company-info-table-container
+        background: #fff
+        display: block
+        .company-info-table
+            height: 210px
+            padding: 0
+            margin: 0
+            .cell
+                height: 210px
+                background: $white
+                &:hover
+                    box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+                    position: relative
+                    left: -3px
+                    height: 206px
+    .custom-select-wrapper
+        width: 35%
+        right: 0px
+        margin-left: 5%
+
+
+@media only screen and (max-height : 830px)
+    .profile-company .item
+        height: 27vh
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+    .profile-company .card .header-title span
+        margin-left: 40px
+    .profile-company .card .header-title
+        margin-top: 10px
+    .profile-company .company-logo
+        border: none
+    .profile-company .item:last-child
+        height: initial
+    .profile-company .company-info-table-container .company-info-table .cell:hover
+        height: 210px
+        left: 0px
+        box-shadow: none
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+    .profile-company
+        margin-top: 50%
+        .item
+            height: initial
+        .text
+            padding: 15px
+        .custom-select-wrapper
+            width: 83vw
+        .company-logo
+            padding: 0px
+            border: none
+        .company-logo.header-logo
+            padding: 20px
+        .company-logo-wrapper
+            position: absolute
+            top: 15px
+            left: 0
+            right: 0
+            margin: auto
+        .card .header-title
+            text-align: center
+            span
+                font-size: 22px
+        .card-header .col-md-12 .pull-right
+            float: none
+            position: absolute
+            right: 5px
+    .profile-company .card-header .header-title.large
+        font-size: 16px
+    .profile-company .card-header .header-title.small
+        font-size: 14px
+    .profile-company .custom-select-wrapper
+        margin-left: 0px
+    .profile-company .company-info-table-container .company-info-table .cell
+        height: 250px
+        &:hover
+            height: 250px
+    .profile-company .card .header-title span
+        margin-left: 0px
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 375px)
+    .profile-company .card .header-title span
+        font-size: 19px
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px)
+    .profile-company .card-header .header-title.large
+        font-size: 12px
+        padding: 0 5px
+    .profile-company .card-header .header-title.small
+        font-size: 12px
+        padding: 0 5px
+    .card-content .company-description .text
+        font-size: 12px
+    .profile-company .custom-select-wrapper
+        width: 80vw
+    .profile-company .card .header-title span
+        font-size: 16px

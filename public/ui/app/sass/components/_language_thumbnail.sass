@@ -1,0 +1,258 @@
+.lang-selector
+  padding-top: 20px
+  margin-right: 5px
+  position: relative
+  cursor: pointer
+  .current-lang
+    text-align: center
+    display: block
+    font-size: 10px
+    p
+      font-family: Roboto-Thin
+      font-size: 14px
+      font-weight: 300
+      color: #564d79
+  ul
+    display: none
+    position: absolute
+    top: 90px
+    left: -270px
+    padding: 15px 0px
+    margin: 0px
+    column-count: 5
+    column-gap: 0px
+    background: #fff
+    z-index: 1
+    border-radius: 3px
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)
+    // overflow: hidden
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      right: 20px
+      margin-top: -13px
+      border-left: 0
+      border-bottom: 13px solid transparent
+      border-top: 13px solid transparent
+      border-right: 12px solid #fff
+      transform: rotate(90deg)
+
+  .current-lang .flag-icon
+    font-size: 14px
+
+.flag-icon
+  position: relative
+  display: inline-block
+  width: 1.3333333333em
+  line-height: 1em
+
+.lang-selector
+  ul
+    a
+      text-decoration: none
+      color: #000 !important
+      font-family: Roboto-Thin
+      font-size: 10px
+      font-weight: 600
+    li
+      list-style: none
+      padding: 5px 5px
+      display: inline-block
+      width: 65px
+      font-size: 11px
+      text-align: center
+      font-family: sans-light
+      color: #6d6b6b
+      &:hover
+        background: #f7f7f7
+        border-radius: 3px
+        transition: all 0.2s ease-in-out
+  &:hover ul
+    display: block
+  ul li span
+    font-size: 20px
+
+.select-language-arrow
+  display: inline-flex
+  margin-left: 5px
+  img
+    height: 12px
+
+.lang-list
+  padding-top: 70px
+  margin: 0 auto
+  width: 75%
+  li
+    display: inline-block
+    padding: 0px 10px
+    font-size: 12px
+  a
+    text-decoration: none
+
+/* .lang-list li:hover {
+ *  font-size: 20px;
+ *  transition: all 0.3s ease;
+ *}
+
+.flag-icon
+  position: relative
+  display: inline-block
+  line-height: 1em
+  width: 30px
+  height: 25px
+
+.flag-icon-background, .flag-icon
+  background-size: contain
+  background-position: 50%
+  background-repeat: no-repeat
+
+.flag-icon-en, .flag-icon-gb
+  background-image: url(../img/langs/gb-d85f0f149b4390bed6624bc30ca2cbfa37d394f14474fcf81d63363ad363e284.svg)
+
+.flag-icon-fr
+  background-image: url(../img/langs/fr-4e8c446e032572a2e74d1fdccec9a3ae93d66dc24952ed2f1fe5bdab6fef5702.svg)
+
+.flag-icon-es
+  background-image: url(../img/langs/es-e36093927dc1fa109e4ddcd4baa65d53d233c23bcdd32796b96409b52c5adbc0.svg)
+
+.flag-icon-pt
+  background-image: url(../img/langs/pt-7056421a09bf65c1e96a0891db8b1d37b9ece7b39a7a8ecdfcbc837d0f773cfa.svg)
+
+.flag-icon-de
+  background-image: url(../img/langs/de-32f54fb46c7fcaf2dfcf9172273456ea57f975efb228860def92481efe51c506.svg)
+
+.flag-icon-it
+  background-image: url(../img/langs/it-a285a0e341ba9492a2b7478e8a7a13f7c76d3c6a581aafb965ea26e1c554f0f3.svg)
+
+.flag-icon-cs, .flag-icon-cz
+  background-image: url(../img/langs/cz-c2a15f3c50b7920c7d82fd9fb21f77c44fb3883f0e34dcf197a23d92d9212290.svg)
+
+.flag-icon-rs, .flag-icon-sr
+  background-image: url(../img/langs/rs-a1bff9944ac65bce131f42964a45cfce50e334c6d52eeeea65f5f6179f8acf4d.svg)
+
+.flag-icon-pl
+  background-image: url(../img/langs/pl-0fc0d2ef9f5b48e43bd93818263cc504c825346f09a73d22c6f84dcde8d651af.svg)
+
+.flag-icon-th
+  background-image: url(../img/langs/th-6211c6caabbc4fdd4ff054cb689406bc9cc7816c01d482a6222e873b0e8fc9b0.svg)
+
+.flag-icon-ua, .flag-icon-uk
+  background-image: url(../img/langs/ua-07199c03990a6b4f285e421d928ab4dba2dfdfdb3e40dd9bfa207c86bc0f3c9d.svg)
+
+.flag-icon-ru
+  background-image: url(../img/langs/ru-2ba8996aa53f5eca5d1b0ea1a67d6d469659ac2523d1b394e3d6e25913bbbc15.svg)
+
+.flag-icon-sa, .flag-icon-ar
+  background-image: url(../img/langs/sa-5aec890788f78356a42e38fe6ea2c30c4c82c99a3f05f654faae5918aae804c4.svg)
+
+.flag-icon-hu
+  background-image: url(../img/langs/hu-b48c8253bec6b4e08f8954a2955fdbc2311d254b51358770d3eaec5fe0875965.svg)
+
+.flag-icon-id
+  background-image: url(../img/langs/id-e02525ae7152d4bd10dcad2ffdf0bf5d08c6c67d3142bc78a7cdbcaf1fcd4a4a.svg)
+
+.flag-icon-dk, .flag-icon-da
+  background-image: url(../img/langs/dk-fdd09296ac803a8cf4066ff5488821458a9788985e3cc09356d4c4ef81959ecf.svg)
+
+.flag-icon-sk
+  background-image: url(../img/langs/sk-271dd9219a226c5e9768072c3d0512b9ab07d1af59a3a5642eba620e3f53ea2c.svg)
+
+.flag-icon-tr
+  background-image: url(../img/langs/tr-b8b3b6850c4c0ffa840db30c814dce6cb86e00e78138bafe8c2c58d263fb4503.svg)
+
+.flag-icon-gr, .flag-icon-el
+  background-image: url(../img/langs/gr-e2aa8c913feebbed26a8fa0de5ac4aeb51545a4c0dee9bfda4ec5d9673f96386.svg)
+
+.flag-icon-sl
+  background-image: url(../img/langs/sl-3fd8765025c44c215906c9d33be69326118f5025b35a93636df059926053c84c.svg)
+
+.flag-icon-se, .flag-icon-sv
+  background-image: url(../img/langs/se-73964261d5ec45c856c9f7b57f1be90f60c5e748596e494aafa5facd817c7118.svg)
+
+.flag-icon-vn, .flag-icon-vi
+  background-image: url(../img/langs/vn-16730ca8238b081b7376fc3829eaac4ddd61a5b423c24c9f07c9a02848c4827f.svg)
+
+.flag-icon-cn, .flag-icon-ko, .flag-icon-zh
+  background-image: url(../img/langs/cn-7af9da3dd810174340b79e6fe636bec183c71d7ce314ac4a5a815bfd388dea54.svg)
+
+.flag-icon-hr
+  background-image: url(../img/langs/hr-6671992f1644503121dce7774bf2f7e2ab65da14124251d80b024d78fb34f6f0.svg)
+
+.flag-icon-sg, .flag-icon-ta
+  background-image: url(../img/langs/sg-2c8851a3c456051d7510b78da650054ee411ecdb01508ab3aa8ddac220de984a.svg)
+
+.flag-icon-pk, .flag-icon-ur
+  background-image: url(../img/langs/pk-d0f9243f586c99692f7d7d18a648095badef0c11bd98645924771c71283f6a51.svg)
+
+.flag-icon-in, .flag-icon-hi
+  background-image: url(../img/langs/in-a6c958c4b5cb12e2392d81b11dd0fed5fd5d0a66c7decb3ad3c8d27175854d3c.svg)
+
+.flag-icon-ir, .flag-icon-fa
+  background-image: url(../img/langs/ir-5f9fdfd2d4cad535338f6de7927cc8094d02eaf06dd5122d3cba9e859c9ec4df.svg)
+
+.flag-icon-jp, .flag-icon-ja
+  background-image: url(../img/langs/jp-1785964f1f3a4346ab8e1cbdc211399c5ced34a566c4725f3d23e8105413d6f4.svg)
+
+.flag-icon-ro
+  background-image: url(../img/langs/ro-63c55736a245e5fa5e0484b4693d43e171941143fcbdb34d3aa8d4cfd6160c9d.svg)
+
+.flag-icon-tj, .flag-icon-tg
+  background-image: url(../img/langs/tj-4bf387aa434be996fc00be6dbb457282e311ff6c7538a484f5cb4d99e45b0747.svg)
+
+.flag-icon-si
+  background-image: url(../img/langs/si-81f600f18fae95b3e2a6813cc012e94bdfd67965eb7ce1676780bc7d04f4f203.svg)
+
+.flag-icon-ro
+  background-image: url(../img/langs/ro-63c55736a245e5fa5e0484b4693d43e171941143fcbdb34d3aa8d4cfd6160c9d.svg)
+
+.flag-icon-ir
+  background-image: url(../img/langs/ir-5f9fdfd2d4cad535338f6de7927cc8094d02eaf06dd5122d3cba9e859c9ec4df.svg)
+
+.flag-icon-jp
+  background-image: url(../img/langs/jp-1785964f1f3a4346ab8e1cbdc211399c5ced34a566c4725f3d23e8105413d6f4.svg)
+
+.flag-icon-in
+  background-image: url(../img/langs/in-a6c958c4b5cb12e2392d81b11dd0fed5fd5d0a66c7decb3ad3c8d27175854d3c.svg)
+
+.flag-icon-il, .flag-icon-he
+  background-image: url(../img/langs/il-98c3c0d9628008ac3a947d8f10fcb01d8e2545dfb265e94e6a29910e1ba57a2d.svg)
+
+.flag-icon-ne
+  background-image: url(../img/langs/ne-3be65335a772b7ba2c8916d0d60f12ed4cc2aebc302151ea23ced9c9a3c38ed4.svg)
+
+.flag-icon-tl, .flag-icon-ph
+  background-image: url(../img/langs/ph-76da2cb2822b71a1e7f182cfe2b8744af8704640feceb476aadf1753611c124c.svg)
+
+.flag-icon-my, .flag-icon-ms
+  background-image: url(../img/langs/my-c0f21e9c6679e1ae455392ded0b9e5d8aad5f5ee79589634ac89d88f0c548060.svg)
+
+.flag-icon-ee, .flag-icon-et
+  background-image: url(../img/langs/ee-6148aad79adb1c847fedb9da5a7e9c9d47e99ef4c8f4853bb9800e738bddb19d.svg)
+
+.flag-icon-lt
+  background-image: url(../img/langs/lt-d6a367644254244a8219c2eaa525b43d261f5da4fb074b0e08cedeb343f737a1.svg)
+
+.flag-icon-cn
+  background-image: url(../img/langs/cn-7af9da3dd810174340b79e6fe636bec183c71d7ce314ac4a5a815bfd388dea54.svg)
+
+.flag-icon-cd, .flag-icon-sw
+  background-image: url(../img/langs/cd-9d7d8b11e63073792e3d5e0327cc673101c65ae7545d721b8b1504c31a0c0078.svg)
+
+.flag-icon-fi
+  background-image: url(../img/langs/fi-a94779c54a538d2f57a421e6beb619f07cc9c2bda40817d236b686deb8eb3b4c.svg)
+
+.flag-icon-ge, .flag-icon-ka
+  background-image: url(../img/langs/ge-4ef2c8e6f371a711c61ac54d8d201a80aab53767cacc5322fb848cd3e38b00e7.svg)
+
+.flag-icon-iq
+  background-image: url(../img/langs/iq-6a74e49d2c3d0ff072086fba1a2fc8b948ca34891a3aca960f9daacec107bcc6.svg)
+
+.flag-icon-lv
+  background-image: url(../img/langs/lv-b672e3ee7e344abaaf9128111a6543ad7897aa92084b74c42a2877aa1b8cf7a8.svg)
+
+.flag-icon-am, .flag-icon-hy
+  background-image: url(../img/langs/am-aeabb81fbe6ac768ba7b95bb22e5a1791eb35ff83d0b5d6785c88ddc6835444e.svg)
+
+.flag-icon-tj
+  background-image: url(../img/langs/tj-4bf387aa434be996fc00be6dbb457282e311ff6c7538a484f5cb4d99e45b0747.svg)

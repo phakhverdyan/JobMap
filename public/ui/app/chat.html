@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<title>Title</title>
+	<meta name="description" content="">
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta property="og:image" content="path/to/image.jpg">
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#000">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#000">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+	<style>body { opacity: 0; overflow-x: hidden; } html { background-color: #fff; }</style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-default clear-margin-bottom shadow no-border" role="navigation">
+	<div class="">
+		<div class="navbar-header" id="mobile-nav">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar top-bar"></span>
+				<span class="icon-bar middle-bar"></span>
+				<span class="icon-bar bottom-bar"></span>
+			</button>
+			<img alt="logo" class="logo-image" src="./img/logo-large.png">
+		</div>
+		<div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+			<div class="logo-container flex-wrapper col-md-2 col-sm-2">
+				<img alt="logo" class="logo-image" src="./img/logo-large.png">
+				<span class="logo-text">CloudResume</span>
+			</div>
+			<div class="search-container col-md-6 col-sm-6">
+				<fieldset class="field-container search-input-group">
+					<input type="text" placeholder="Search businesses, job title" class="field">
+					<div class="icons-container">
+						<div class="icon-search"></div>
+						<div class="icon-close">
+							<div class="x-up"></div>
+							<div class="x-down"></div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			<div class="links-container col-md-4 col-sm-3 col-xs-12">
+				<ul class="nav navbar-nav navbar-right clear-margin">
+					<li class="nav-item">
+						<div class="lang-selector">
+								<span class="current-lang">
+											<a class="button lang-button" href="#">EN</a>
+										</span>
+							<ul class="fade-fast">
+								<a href="/lang/en">
+									<li>
+										<span class="flag-icon flag-icon-gb"></span>
+										<br> English
+									</li>
+								</a>
+								<a href="/lang/fr">
+									<li>
+										<span class="flag-icon flag-icon-fr"></span>
+										<br> Français
+									</li>
+								</a>
+								<a href="/lang/es">
+									<li>
+										<span class="flag-icon flag-icon-es"></span>
+										<br> Español
+									</li>
+								</a>
+								<a href="/lang/pt">
+									<li>
+										<span class="flag-icon flag-icon-pt"></span>
+										<br> Português
+									</li>
+								</a>
+								<a href="/lang/de">
+									<li>
+										<span class="flag-icon flag-icon-de"></span>
+										<br> Deutsch
+									</li>
+								</a>
+								<a href="/lang/it">
+									<li>
+										<span class="flag-icon flag-icon-it"></span>
+										<br> Italiano
+									</li>
+								</a>
+								<a href="/lang/cs">
+									<li>
+										<span class="flag-icon flag-icon-cz"></span>
+										<br> Čeština
+									</li>
+								</a>
+								<a href="/lang/sr">
+									<li>
+										<span class="flag-icon flag-icon-rs"></span>
+										<br> Српски
+									</li>
+								</a>
+								<a href="/lang/pl">
+									<li>
+										<span class="flag-icon flag-icon-pl"></span>
+										<br> Polski
+									</li>
+								</a>
+								<a href="/lang/th">
+									<li>
+										<span class="flag-icon flag-icon-th"></span>
+										<br> ไทย
+									</li>
+								</a>
+								<a href="/lang/uk">
+									<li>
+										<span class="flag-icon flag-icon-ua"></span>
+										<br> Українська
+									</li>
+								</a>
+								<a href="/lang/ru">
+									<li>
+										<span class="flag-icon flag-icon-ru"></span>
+										<br> Русский
+									</li>
+								</a>
+								<a href="/lang/ar">
+									<li>
+										<span class="flag-icon flag-icon-sa"></span>
+										<br> العربية
+									</li>
+								</a>
+								<a href="/lang/hu">
+									<li>
+										<span class="flag-icon flag-icon-hu"></span>
+										<br> Magyar
+									</li>
+								</a>
+								<a href="/lang/id">
+									<li>
+										<span class="flag-icon flag-icon-id"></span>
+										<br> Indonesia
+									</li>
+								</a>
+								<a href="/lang/da">
+									<li>
+										<span class="flag-icon flag-icon-dk"></span>
+										<br> Dansk
+									</li>
+								</a>
+								<a href="/lang/sk">
+									<li>
+										<span class="flag-icon flag-icon-sk"></span>
+										<br> Slovenčina
+									</li>
+								</a>
+								<a href="/lang/tr">
+									<li>
+										<span class="flag-icon flag-icon-tr"></span>
+										<br> Türkçe
+									</li>
+								</a>
+								<a href="/lang/el">
+									<li>
+										<span class="flag-icon flag-icon-gr"></span>
+										<br> Ελληνικά
+									</li>
+								</a>
+								<a href="/lang/sl">
+									<li>
+										<span class="flag-icon flag-icon-sl"></span>
+										<br> Slovenščina
+									</li>
+								</a>
+								<a href="/lang/sv">
+									<li>
+										<span class="flag-icon flag-icon-se"></span>
+										<br> Svenska
+									</li>
+								</a>
+								<a href="/lang/vi">
+									<li>
+										<span class="flag-icon flag-icon-vn"></span>
+										<br> Việt
+									</li>
+								</a>
+								<a href="/lang/zh">
+									<li>
+										<span class="flag-icon flag-icon-cn"></span>
+										<br> 漢語
+									</li>
+								</a>
+								<a href="/lang/hr">
+									<li>
+										<span class="flag-icon flag-icon-hr"></span>
+										<br> Hrvatski
+									</li>
+								</a>
+								<a href="/lang/ur">
+									<li>
+										<span class="flag-icon flag-icon-pk"></span>
+										<br> اردو
+									</li>
+								</a>
+								<a href="/lang/ta">
+									<li>
+										<span class="flag-icon flag-icon-sg"></span>
+										<br> தமிழ்
+									</li>
+								</a>
+								<a href="/lang/tg">
+									<li>
+										<span class="flag-icon flag-icon-tj"></span>
+										<br> Toçikī
+									</li>
+								</a>
+								<a href="/lang/si">
+									<li>
+										<span class="flag-icon flag-icon-si"></span>
+										<br> සිංහල
+									</li>
+								</a>
+								<a href="/lang/ro">
+									<li>
+										<span class="flag-icon flag-icon-ro"></span>
+										<br> Română
+									</li>
+								</a>
+								<a href="/lang/ja">
+									<li>
+										<span class="flag-icon flag-icon-jp"></span>
+										<br> 日本語
+									</li>
+								</a>
+								<a href="/lang/fa">
+									<li>
+										<span class="flag-icon flag-icon-ir"></span>
+										<br> فارسی
+									</li>
+								</a>
+								<a href="/lang/hi">
+									<li>
+										<span class="flag-icon flag-icon-in"></span>
+										<br> हिंदी
+									</li>
+								</a>
+								<a href="/lang/he">
+									<li>
+										<span class="flag-icon flag-icon-il"></span>
+										<br> עברית
+									</li>
+								</a>
+								<a href="/lang/ne">
+									<li>
+										<span class="flag-icon flag-icon-ne"></span>
+										<br> नेपाली
+									</li>
+								</a>
+								<a href="/lang/tl">
+									<li>
+										<span class="flag-icon flag-icon-ph"></span>
+										<br> Tagalog
+									</li>
+								</a>
+								<a href="/lang/ms">
+									<li>
+										<span class="flag-icon flag-icon-my"></span>
+										<br> Melayu
+									</li>
+								</a>
+								<a href="/lang/et">
+									<li>
+										<span class="flag-icon flag-icon-ee"></span>
+										<br> Eesti
+									</li>
+								</a>
+								<a href="/lang/lt">
+									<li>
+										<span class="flag-icon flag-icon-lt"></span>
+										<br> Lietuvių
+									</li>
+								</a>
+								<a href="/lang/ko">
+									<li>
+										<span class="flag-icon flag-icon-cn"></span>
+										<br> 한국어
+									</li>
+								</a>
+								<a href="/lang/sw">
+									<li>
+										<span class="flag-icon flag-icon-cd"></span>
+										<br> Kiswahili
+									</li>
+								</a>
+								<a href="/lang/fi">
+									<li>
+										<span class="flag-icon flag-icon-fi"></span>
+										<br> Suomi
+									</li>
+								</a>
+								<a href="/lang/ka">
+									<li>
+										<span class="flag-icon flag-icon-ge"></span>
+										<br> ქართული
+									</li>
+								</a>
+								<a href="/lang/ku">
+									<li>
+										<span class="flag-icon flag-icon-iq"></span>
+										<br> Kurdî
+									</li>
+								</a>
+								<a href="/lang/lv">
+									<li>
+										<span class="flag-icon flag-icon-lv"></span>
+										<br> Latviešu
+									</li>
+								</a>
+								<a href="/lang/hy">
+									<li>
+										<span class="flag-icon flag-icon-am"></span>
+										<br> Հայերեն
+									</li>
+								</a>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="thumbnail avatar">
+								<span class="current-lang">
+									<img src="./img/profile-avatar.png">
+								</span>
+							<ul class="fade-fast">
+								<a href="#">
+									<li>
+										<img class="user-image" src="./img/avatar.png">
+									</li>
+								</a>
+								<a href="#">
+									<li>
+										<p class="text blue fs-16 clear-padding">Mark</p>
+									</li>
+								</a>
+								<div class="divide-line thumbnail-divide responsive mt-top-4"></div>
+								<li class="mt-top-4">
+									<a href="#">
+										<div class="thumbnail-input-wrapper col-md-10">
+											<input class="thumbnail-input" type="text" placeholder="Please give us some feedback.">
+										</div>
+									</a>
+									<div class="col-md-2 clear-padding mt-2">
+										<i class="nc-icon nc-send-2 send-icon"></i>
+									</div>
+								</li>
+								<a href="#">
+									<li>
+										<a href="http://localhost:3000/dashboard.html"><p class="text blue fs-16 clear-padding">Dashboard</p></a>
+									</li>
+								</a>
+								<a href="#">
+									<li>
+										<a href="http://localhost:3000/manage_resume.html"><p class="text blue fs-16 clear-padding">Edit my resume</p></a>
+									</li>
+								</a>
+								<a href="#">
+									<li>
+										<a href="http://localhost:3000/chat.html"><p class="text blue fs-16 clear-padding">Messages<span class="notification">23</span></p></a>
+									</li>
+								</a>
+								<a href="#">
+									<li>
+										<a href="http://localhost:3000/sent_resume.html"><p class="text blue fs-16 clear-padding">Sent resumes</p></a>
+									</li>
+								</a>
+								<a href="#">
+									<li>
+										<a href="http://localhost:3000/settings.html"><p class="text blue fs-16 clear-padding">Settings</p></a>
+									</li>
+								</a>
+								<div class="divide-line thumbnail-divide responsive mt-2"></div>
+								<a href="#">
+									<li>
+										<p class="text fs-16 clear-padding">Logout</p>
+									</li>
+								</a>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-item">
+						<div class="thumbnail menu">
+								<span class="current-lang">
+									<img class="thumbnail-image" src="./img/icons/thumbnail.png">
+								</span>
+							<ul class="fade-fast">
+								<a href="#">
+									<li>
+										<p class="text middle">
+											<i class="fa powered-with-icon fa-bolt" aria-hidden="true"></i> &nbsp;Powered by
+											<span class="text middle bold"> CloudResume</span>
+										</p>
+									</li>
+								</a>
+								<a href="#">
+									<li class="mt-5">
+										<div class=" col-md-6 text-center mt-2">
+											<img class="powered-with-image" src="./img/jobmap.png">
+											<p class="text fs-17 text-blue text-center clear-padding mt-top-15">JobMap</p>
+										</div>
+										<div class="col-md-6 clear-padding mt-2">
+											<img class="powered-with-image" src="./img/logo-large.png">
+											<p class="text fs-17 text-blue text-center clear-padding mt-top-15">CloudResume</p>
+										</div>
+									</li>
+								</a>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</nav>
+
+<div class="page animsition " style="animation-duration: 800ms; opacity: 1;">
+
+	<!-- sidebar -->
+	<div class="nav-side-menu float-side-menu pull-left">
+		<div class="menu-list">
+			<ul id="menu-content" class="menu-content collapse out">
+				<li>
+					<a href="#">
+						<img src="./img/sidebar/feedback.png" />
+						<span>Enter your feedback</span>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<img src="./img/sidebar/setup.png" />
+						<span>Set up</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/dashboard_employers.html">
+						<img src="./img/sidebar/dashboard.png" />
+						<span>Dashboard</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/candidate_list.html">
+						<img src="./img/sidebar/candidates.png" />
+						<span>Candidates</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/chat.html">
+						<img src="./img/sidebar/messages.png" />
+						<span>Messages</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/job_position.html">
+						<img src="./img/sidebar/jobs.png" />
+						<span>Jobs</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/employer_profile.html">
+						<img src="./img/sidebar/employer.png" />
+						<span>Employer profile</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/locations.html">
+						<img src="./img/sidebar/locations.png" />
+						<span>Locations</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/integrations.html">
+						<img src="./img/sidebar/integrations.png" />
+						<span>Integrations</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/account_users.html">
+						<img src="./img/sidebar/account.png" />
+						<span>Account users & roles</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/billing.html">
+						<img src="./img/sidebar/billing-blue.png" />
+						<span>Billing</span>
+					</a>
+				</li>
+				<li>
+					<a href="http://localhost:3000/settings.html">
+						<img src="./img/sidebar/settings.png" />
+						<span>Settings</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- end sidebar -->
+
+	<!-- Message Sidebar -->
+	<div class="page-aside mt-top-4" style="left: 256px;">
+		<div class="page-aside-switch">
+			<i class="icon wb-chevron-left" aria-hidden="true"></i>
+			<i class="icon wb-chevron-right" aria-hidden="true"></i>
+		</div>
+		<div class="page-aside-inner">
+
+			<div class="page-aside-header">
+				<div class="header">
+					<img src="./img/inbox/speech-bubble.png" />
+					<span class="header-title">Inbox</span>
+					<img src="./img/inbox/close.png" class="mobile-icon close pull-right" id="close_msg_aside">
+				</div>
+				<div class="input-search-wrapper">
+					<div class="input-search">
+						<button class="input-search-btn" type="submit" id="params_msg_button">
+							<img src="./img/inbox/params-search.png" />
+						</button>
+						<button class="params-search-btn" type="submit" id="search_msg_button">
+							<img src="./img/inbox/input-search.png" />
+						</button>
+						<form>
+							<input class="form-control" type="text" placeholder="Search messages" name="">
+						</form>
+					</div>
+					<div class="search-list">
+						<ul>
+							<li>All Messages<span class="badge badge-danger pull-right">3</span></li>
+							<li>Archived</li>
+							<li>My Connections</li>
+							<li>Blocked</li>
+						</ul>
+					</div>
+				</div>
+				<a class="button search-button small text-blue">
+					<!--<img src="./img/inbox/edit.png" />-->
+					Create New message
+				</a>
+			</div>
+
+			<div class="app-message-list scrollable is-enabled scrollable-vertical" data-plugin="pageAsideScroll" style="position: relative;">
+				<!--
+				<div data-role="container" class="scrollable-container" style="height: 824px; width: 274px;">
+					<div data-role="content" class="scrollable-content" style="width: 259px;">
+						<ul class="list-group">
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a class="media-avatar" href="javascript:void(0)">
+											<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i></a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">Kerem Sure</h4>
+										<p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+									</div>
+									<div class="media-right">
+										<span class="media-time">Jul 23</span>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a class="media-avatar" href="javascript:void(0)">
+											<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i></a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">Kerem Sure</h4>
+										<p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+									</div>
+									<div class="media-right">
+										<span class="media-time">Jul 23</span>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item active">
+								<div class="media">
+									<div class="media-left">
+										<a class="media-avatar" href="javascript:void(0)">
+											<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i></a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">Kerem Sure</h4>
+										<p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+									</div>
+									<div class="media-right">
+										<span class="media-time">Jul 23</span>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a class="media-avatar" href="javascript:void(0)">
+											<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i></a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">Kerem Sure</h4>
+										<p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+									</div>
+									<div class="media-right">
+										<span class="media-time">Jul 23</span>
+									</div>
+								</div>
+							</li>
+
+							<li class="list-group-item">
+								<div class="media">
+									<div class="media-left">
+										<a class="media-avatar" href="javascript:void(0)">
+											<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i></a>
+									</div>
+									<div class="media-body">
+										<h4 class="media-heading">Kerem Sure</h4>
+										<p class="media-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+									</div>
+									<div class="media-right">
+										<span class="media-time">Jul 23</span>
+									</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				-->
+				<div class="scrollable-bar scrollable-bar-vertical is-disabled scrollable-bar-hide" draggable="false"><div class="scrollable-bar-handle"></div></div></div>
+		</div>
+	</div>
+
+	<!-- End Message Sidebar -->
+	<div class="page-main mt-top-2" style="margin-left: 520px; position: relative;">
+		<!-- Chat Header -->
+		<div class="chat-header">
+			<img src="./img/inbox/hamburger.png" class="mobile-icon hamburger pull-right" id="open_msg_aside">
+			<div class="media">
+				<div class="media-left">
+					<a class="media-avatar" href="javascript:void(0)">
+						<img class="img-responsive" src="./img/inbox/user1.png" alt="..."><i></i>
+					</a>
+				</div>
+				<div class="media-wrapper">
+					<h4 class="media-heading">Kerem Sure</h4>
+					<span class="media-content">2 minutes ago</span>
+				</div>
+			</div>
+		</div>
+		<p class="time">Today</p>
+		<!-- Chat Box -->
+		<div class="app-message-chats" style="height: 545px;">
+			<div class="chats">
+				<div class="chat">
+					<div class="chat-avatar">
+						<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+							<img src="./img/inbox/user2.png" alt="Mark">
+						</a>
+					</div>
+					<div class="chat-body">
+						<div class="chat-content">
+							<p>
+								Hello. What can I do for you?
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="chat chat-left">
+					<div class="chat-avatar">
+						<a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="">
+							<img src="./img/inbox/user1.png" alt="June Lane">
+						</a>
+					</div>
+					<div class="chat-body">
+						<div class="chat-content">
+							<p>
+								I'm just looking around.
+							</p>
+							<p>Will you tell me something about yourself? </p>
+						</div>
+						<div class="chat-content">
+							<p>
+								Are you there? That time!
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="chat">
+					<div class="chat-avatar">
+						<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+							<img src="./img/inbox/user2.png" alt="Mark">
+						</a>
+					</div>
+					<div class="chat-body">
+						<div class="chat-content">
+							<p>
+								Where?
+							</p>
+						</div>
+						<div class="chat-content">
+							<p>
+								OK, my name is Limingqiang. I like singing, playing basketballand so on.
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="chat chat-left">
+					<div class="chat-avatar">
+						<a class="avatar" data-toggle="tooltip" href="#" data-placement="left" title="" data-original-title="">
+							<img src="./img/inbox/user1.png" alt="June Lane">
+						</a>
+					</div>
+					<div class="chat-body">
+						<div class="chat-content">
+							<p>You wait for notice.</p>
+						</div>
+						<div class="chat-content">
+							<p>Consectetuorem ipsum dolor sit?</p>
+							<p>
+							<div class="attached-icon">
+								<img src="./img/inbox/document-icon-white.png" />
+							</div>
+							<span class="text-blue">File.txt</span>
+							</p>
+							<p>
+							<div class="attached-icon">
+								<img src="./img/inbox/image_placeholder_white.png" />
+							</div>
+							<span class="text-blue">File.txt</span>
+							</p>
+						</div>
+						<div class="chat-content">
+							<p>OK?</p>
+						</div>
+					</div>
+				</div>
+				<div class="chat">
+					<div class="chat-avatar">
+						<a class="avatar" data-toggle="tooltip" href="#" data-placement="right" title="" data-original-title="">
+							<img src="./img/inbox/user2.png" alt="Mark">
+						</a>
+					</div>
+					<div class="chat-body">
+						<div class="chat-content">
+							<p>OK!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!-- End Chat Box -->
+
+		<!-- Message Input-->
+		<form class="app-message-input" style="width: 100%; display: inline-block; ">
+			<div class="message-input">
+				<textarea class="form-control" rows="1" placeholder="Type your message here...." style="overflow: hidden; word-wrap: break-word;"></textarea>
+				<label class="control checkbox-label msg-checkbox">
+					<input type="checkbox">
+					<div class="control-indicator"></div>
+					Press Enter to Send
+				</label>
+
+				<a class="button small text-blue send-msg-button">Send</a>
+			</div>
+			<div class="message-input-actions btn-group">
+				<button class="add-msg-button" type="button">
+					<img src="./img/inbox/clip.png" />
+				</button>
+				<button class="add-msg-button" type="button">
+					<img src="./img/inbox/image_placeholder.png" />
+				</button>
+			</div>
+			<!-- <button class="message-input-btn btn btn-primary" type="button">SEND</button> -->
+		</form>
+		<!-- End Message Input-->
+
+	</div>
+
+
+
+</div>
+
+
+<link rel="stylesheet" href="css/main.min.css">
+<script src="js/scripts.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+.cta {
+    display: inline-block;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+.cta-title {
+    opacity: .7;
+    font-size: 19px;
+    font-family: sans-semibold!important;
+    margin-top: 25px;
+} 

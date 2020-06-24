@@ -1,0 +1,11 @@
+.business-list-icon img {
+    height: 30px;
+    width: 30px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 0!important;
+}
+
+.business-list-icon {
+    display: inline-block;
+}

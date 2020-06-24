@@ -1,0 +1,167 @@
+.thumbnail
+  margin-top: 16px
+  margin-left: 10px
+  position: relative
+  cursor: pointer
+  padding: 5px
+  .current-lang
+    text-align: center
+    display: block
+    font-size: 10px
+    p
+      font-family: Roboto-Thin
+      font-size: 14px
+      font-weight: 300
+      color: #564d79
+  ul
+    display: none
+    position: absolute
+    top: 73px
+    left: -265px
+    padding: 15px 0px
+    padding-bottom: 8px
+    margin: 0px
+    background: #fff
+    z-index: 1
+    border-radius: 3px
+    box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1)
+    // overflow: hidden
+    width: 300px
+    &:after
+      content: ''
+      position: absolute
+      top: 0px
+      right: 20px
+      margin-top: -13px
+      border-left: 0
+      border-bottom: 13px solid transparent
+      border-top: 13px solid transparent
+      border-right: 12px solid #fff
+      transform: rotate(90deg)
+  .current-lang .flag-icon
+    font-size: 14px
+
+.flag-icon
+  position: relative
+  display: inline-block
+  width: 1.3333333333em
+  line-height: 1em
+
+.thumbnail-input-wrapper
+  padding-right: 0px
+  padding-left: 6px
+  input
+    text-align: left
+    padding: 10px
+    font-size: 13px
+    opacity: 0.5
+    letter-spacing: 0.5px
+
+.thumbnail
+  .thumbnail-image
+    opacity: .5
+    width: 75%
+    padding: 5px 2px
+    &:hover
+      opacity: 1
+  ul
+    .header
+      border-top: 1px solid #000
+      border-bottom: 1px solid #000
+      border-color: #1d90ed
+      color: #1d90ed!important
+    a.button 
+      font-family: sans-regular
+      font-weight: 400
+      color: #1d90ed!important
+      &:hover
+        color: #fff!important
+    a
+      text-decoration: none
+      color: #000 !important
+      font-family: Roboto-Thin
+      font-size: 10px
+      font-weight: 600
+    li
+      list-style: none
+      padding: 5px 5px
+      display: inline-block
+      width: 100%
+      font-size: 11px
+      text-align: center
+      color: #868686
+      p
+        font-family: sans-light
+        position: relative
+  &:hover ul
+    display: block
+  ul li span
+    font-size: 20px
+
+.thumbnail.menu
+  margin: 15px 0
+  margin-left: 5px
+  ul li:hover
+    background: #fff
+
+.thumbnail.avatar
+  margin: 10px 15px
+  border: none
+  img
+    width: 39px
+    border: 2px solid #fff
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,.14), 0 1px 2px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2)
+    border-radius: 5px
+  .user-image
+    width: 70px
+    border-radius: 5px
+    border: 2px solid #fff
+    box-shadow: 0px 4px 10px 0 rgba(0,0,0,0.14), 0 1px 2px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2)
+  ul
+    top: 80px
+    left: -250px
+    li:hover
+      // background: #f7f7f7
+      border-radius: 3px
+      transition: all 0.2s ease-in-out
+      p
+        color: $blue
+  &:hover ul
+    display: block
+
+.thumbnail-divide
+  border-color: #e3e3e3
+  opacity: 0.7
+
+.select-language-arrow
+  display: inline-flex
+  margin-left: 5px
+  img
+    height: 12px
+
+.lang-list
+  padding-top: 70px
+  margin: 0 auto
+  width: 75%
+  li
+    display: inline-block
+    padding: 0px 10px
+    font-size: 12px
+  a
+    text-decoration: none
+
+
+.flag-icon
+  position: relative
+  display: inline-block
+  line-height: 1em
+  width: 30px
+  height: 25px
+
+.flag-icon-background, .flag-icon
+  background-size: contain
+  background-position: 50%
+  background-repeat: no-repeat
+
+.flag-icon-en
+  background-image: url(../imgs/langs/gb-d85f0f149b4390bed6624bc30ca2cbfa37d394f14474fcf81d63363ad363e284.svg)

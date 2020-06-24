@@ -1,0 +1,139 @@
+@import './../_vars'
+
+/* Checkbox */
+
+.form-checkbox
+  display: flex
+  background: #fff
+  text-align: left
+  padding: 30px
+  height: 100px
+  padding-bottom: 0px
+.control
+  font-family: sans-regular
+  font-size: 14px
+  font-weight: 400
+  position: relative
+  display: inline-block
+  padding: 0px
+  margin: 0px
+  cursor: pointer
+  input
+    position: absolute
+    z-index: -1
+    opacity: 0
+
+.control-indicator
+  display: inline-block
+  position: relative
+  width: 27px
+  height: 27px
+  border: 1px solid #e6e6e6
+  border-radius: 3px
+
+.control-radio .control-indicator
+  border-radius: 50%
+
+.control
+  &:hover input ~ .control-indicator
+    background: #fff
+  input
+    &:focus ~ .control-indicator
+      background: #fff
+    &:checked ~ .control-indicator
+      transition: all 0.25s ease
+      background: $blue
+      border: 0px
+  &:hover input:not([disabled]):checked ~ .control-indicator, input:checked:focus ~ .control-indicator
+    transition: all 0.25s ease
+    background: $blue
+
+.control-indicator:after
+  content: ''
+  position: absolute
+  display: none
+
+.control input:checked ~ .control-indicator:after
+  display: block
+
+.checkbox-label
+  font-weight: 300
+  .control-indicator:after
+    left: 8px
+    top: 0px
+    width: 13px
+    height: 18px
+    border: solid #ebebeb
+    border-width: 0 3px 3px 0
+    transform: rotate(45deg)
+
+.checkbox-text
+  margin-left: 10px
+.checkbox-container.middle
+  display: flex
+  .control-indicator
+    width: 23px
+    height: 23px
+    &::after
+      border-width: 0 2px 2px 0
+      left: 8px
+      top: 2px
+      width: 8px
+      height: 15px
+
+.checkbox-container.outline
+  .control
+    &:hover input ~ .control-indicator
+      background: #fff
+    input
+      &:focus ~ .control-indicator
+        background: #fff
+      &:checked ~ .control-indicator
+        transition: all 0.25s ease
+        background: $white
+        border: 1px solid #e6e6e6
+    &:hover input:not([disabled]):checked ~ .control-indicator, input:checked:focus ~ .control-indicator
+      transition: all 0.25s ease
+      background: $white
+    .control-indicator:after
+      border-color: $blue
+
+.checkbox-container.small
+  display: flex
+  .control-indicator
+    width: 20px
+    height: 20px
+    &::after
+      border-width: 0 2px 2px 0
+      left: 6px
+      top: 2px
+      width: 8px
+      height: 13px
+
+/* Availability form
+.form-checkbox .cell
+  border: solid #000
+  .controll
+    padding-left: 40px
+    padding-top: 20px
+    .control-indicator
+      top: 20px
+      left: 7px
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.control
+		margin-right: 0px
+		font-size: 13px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	.control
+		padding-left: 50px
+		.control-indicator
+			left: 10px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+	/**/

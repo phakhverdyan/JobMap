@@ -1,0 +1,18 @@
+.btn-outline-primary:hover svg path,
+.btn-outline-primary:hover svg path {
+    fill: #ffffff !important;
+}
+
+.btn-outline-success:hover svg path,
+.btn-outline-primary:hover svg polygon {
+    fill: #ffffff !important;
+}
+
+.btn-link:hover svg {
+    fill-opacity: 0.5;
+}
+
+
+.btn {
+    white-space: normal;
+}

@@ -1,0 +1,24 @@
+@import './../_vars'
+
+
+.education-info .days-table-container .days-table
+    &:first-child
+        .cell
+            background: $light-grey
+            border-top: 1px solid $light-grey
+            border-top: 1px solid $light-grey
+            border-top-left-radius: 5px
+            border-top-right-radius: 5px
+            .input-group
+                height: 100%
+                .form-control
+                    background: $light-grey
+    &:last-child .cell
+        &:first-child
+            border-bottom-left-radius: 5px
+        &:last-child
+            border-bottom-right-radius: 5px
+    .cell .input-group .form-control
+        height: 100%
+        border-radius: 0px
+        background: $white

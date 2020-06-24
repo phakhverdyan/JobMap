@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Title</title>
+    <meta name="description" content="">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta property="og:image" content="path/to/image.jpg">
+    <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
+
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#000">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#000">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+    <style>
+        body {
+            opacity: 0;
+            overflow-x: hidden;
+        }
+
+        html {
+            background-color: #fff;
+        }
+    </style>
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtr3FT0uDFpjx-VisBICLWclTjETC6UTc"></script> -->
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="css/main.min.css">
+
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header" id="mobile-nav">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar top-bar"></span>
+					<span class="icon-bar middle-bar"></span>
+					<span class="icon-bar bottom-bar"></span>
+				</button>
+                <img alt="logo" class="logo-image" src="./img/logo.png" />
+            </div>
+            <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                <div class="search-container col-md-2 col-sm-2 clear-left-padding">
+                    <div class="input-group search-input-group">
+                        <input type="text" class="form-control" />
+                    </div>
+                </div>
+                <div class="search-container col-md-4 col-sm-4">
+                    <fieldset class="field-container search-input-group">
+                        <input type="text" placeholder="Search..." class="field" />
+                        <div class="icons-container">
+                            <div class="icon-search"></div>
+                            <div class="icon-close">
+                                <div class="x-up"></div>
+                                <div class="x-down"></div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="links-container col-md-6 col-sm-6 col-xs-12">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="nav-item"><a class="button lang-button" href="#">EN</a></li>
+                        <li class="nav-item">
+                            <div class="profile-link">
+                                <img src="./img/profile-avatar.png" />
+                                <a class="title" href="#">Sergey Pantileev</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="map-canvas" class="small-map"></div>
+
+    <div class="container">
+        <div class="profile-company">
+            <div class="row">
+                <div class="col-md-12 col-xs-12">
+                    <!-- header -->
+                    <div class="card clear-padding">
+                        <div class="row">
+                            <div class="item col-md-3 col-sm-4 col-xs-12">
+                                <div class="company-logo header-logo">
+                                    <img src="./img/bmw-large.png" />
+                                </div>
+                            </div>
+                            <div class="item col-md-5 col-sm-8">
+                                <div class="row">
+                                    <div class="header-title col-md-offset-1 col-xs-12">
+                                        <span>Bayerische Motoren Werke AG</span>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div class="row">
+                                    <div class="col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                        <div class="logo-wrapper">
+                                            <img alt="education" src="./img/men.png" />
+                                        </div>
+                                        <span class="info-text">3 headquarters</span>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div class="row">
+                                    <div class="col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                        <div class="logo-wrapper">
+                                            <img alt="education" src="./img/marker-active.png" />
+                                        </div>
+                                        <span class="info-text">3 locations </span>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div class="row">
+                                    <div class="col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                        <div class="logo-wrapper">
+                                            <img alt="education" src="./img/case-active.png" />
+                                        </div>
+                                        <span class="info-text">23 Jobs</span>
+                                    </div>
+                                </div>
+                                <!-- title -->
+                                <div class="row">
+                                    <div class="col-md-offset-1 col-xs-10 col-xs-offset-1">
+                                        <div class="logo-wrapper">
+                                            <img alt="education" src="./img/website.png" />
+                                        </div>
+                                        <span class="info-text">www.cook.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item col-md-4 col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div class="input-form col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 clear-padding">
+                                        <a class="button"><img src="./img/logo-small.png" />Send CloudResume</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 clear-padding">
+                                        <a class="button">Follow</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-8 col-md-offset-2 col-xs-10 col-xs-offset-1 clear-padding">
+                                        <div class="logo-wrapper">
+                                            <img alt="education" src="./img/people.png" />
+                                        </div>
+                                        <span class="info-text">33123123 followes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="text">
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        esse cillum dolore eu fugiat nulla pariatur.
+                                    </p>
+                                    <p>
+                                        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis
+                                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+                                        rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae
+                                        vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
+                                        aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
+                                        sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+                                        consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore
+                                        et dolore magnam aliquam quaerat voluptatem.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end header -->
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card clear-padding">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6 col-xs-9 pull-left clear-padding">
+                                        <img alt="education" src="./img/men.png" />
+                                        <span class="header-title large">6 headquarters</span>
+                                        <select name="sources" class="custom-select sources" placeholder="MM">
+                                            <option value="profile">june</option>
+                                            <option value="word">july</option>
+                                            <option value="hashtag">august</option>
+                                        </select>
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="header-title small blue">view all</span>
+                                        <img alt="education" src="./img/left-arrow.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="col-md-12 clear-padding">
+
+                                <div class="company-info-table-container">
+                                    <!-- 1 -->
+                                    <div class="company-info-table">
+                                        <div class="cell col-md-4 col-sm-12 col-xs-12 clear-padding top-left-corner">
+
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-sm-8 col-xs-8">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="cell col-md-4 col-sm-6 col-xs-6 clear-padding top-border">
+                                            <div class="col-md-4 company-logo-wrapper">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-sm-6 col-xs-6 clear-padding top-right-corner">
+                                            <div class="col-md-4 company-logo-wrapper">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 2 -->
+                                    <div class="company-info-table">
+                                        <div class="cell col-md-4 col-sm-12 col-xs-12 clear-padding top-left-corner">
+
+                                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-sm-8 col-xs-8">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="cell col-md-4 col-sm-6 col-xs-6 clear-padding top-border">
+                                            <div class="col-md-4 company-logo-wrapper">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-sm-6 col-xs-6 clear-padding top-right-corner">
+                                            <div class="col-md-4 company-logo-wrapper">
+                                                <div class="company-logo">
+                                                    <img src="./img/bmw.png" />
+                                                </div>
+                                            </div>
+                                            <div class="company-description col-md-8 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <span class="title">Branch name</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-11">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/marker-active.png" />
+                                                        </div>
+                                                        <span class="text">73823 Saint Laurent Ouest ST. UT, QC, Canada</span>
+                                                    </div>
+                                                </div>
+                                                <!-- title -->
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-12">
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/case-active.png" />
+                                                        </div>
+                                                        <span class="info-text">23 jobs</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card clear-padding">
+                        <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="col-md-6 col-xs-9 pull-left clear-padding">
+                                        <img alt="education" src="./img/men.png" />
+                                        <span class="header-title large">6 headquarters</span>
+                                        <select name="sources" class="custom-select sources" placeholder="MM">
+                                            <option value="profile">june</option>
+                                            <option value="word">july</option>
+                                            <option value="hashtag">august</option>
+                                        </select>
+                                    </div>
+                                    <div class="pull-right">
+                                        <span class="header-title small blue">view all</span>
+                                        <img alt="education" src="./img/left-arrow.png" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-switch">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="switch-field">
+                                        <input type="radio" id="switch_left" name="switch_2" value="yes" checked/>
+                                        <label for="switch_left">Available  (25)</label>
+                                        <input type="radio" id="switch_right" name="switch_2" value="no" />
+                                        <label for="switch_right">Closed (32)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-content">
+
+                            <div class="col-md-12 clear-padding">
+                                <!-- days table -->
+                                <div class="company-info-table-container">
+                                    <!-- 1 -->
+                                    <div class="company-info-table">
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 2 -->
+                                    <div class="company-info-table">
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12 col-xs-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="cell col-md-4 col-xs-6 clear-padding top-left-corner">
+                                            <div class="company-description col-md-12">
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="title">Sales manager</span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-md-offset-1 col-xs-offset-1">
+                                                        <span class="info-text">view job</span>
+                                                        <div class="logo-wrapper">
+                                                            <img alt="education" src="./img/left-arrow.png" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br/>
+
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtr3FT0uDFpjx-VisBICLWclTjETC6UTc"></script>
+    <script src="js/scripts.min.js"></script>
+
+
+</body>
+
+</html>

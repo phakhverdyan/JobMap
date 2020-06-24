@@ -1,0 +1,117 @@
+.billing-description
+	color: #7b7b7b
+	font-family: sans-regular
+	font-size: 15px
+	font-weight: 400
+	line-height: 24px
+
+.billing-info
+	padding: 0 10px
+
+.input-title
+	font-family: sans-regular
+	font-size: 13px
+	font-weight: 400
+	line-height: 20px
+	color: #838b85
+	width: 100%
+	height: 0px
+
+.input-title.capitalize
+	text-transform: uppercase
+
+.input-field
+	border-radius: 5px
+	height: 42px
+	border: 1px solid #cad3df
+	&:hover,&:active,&:focus
+		border-color: #cad3df
+		box-shadow: none
+
+.input-wrapper,.select-wrapper
+	margin-bottom: 15px
+
+.select-wrapper
+	.custom-select-wrapper
+		right: 0px
+		left: 0px
+
+.custom-select.default
+	.custom-select-trigger
+		background-color: #fff
+		border: 1px solid #cad3df
+		color: #838b85
+		padding-top: 2px
+		padding-bottom: 3px
+		&:after
+			border-color: #b4becb
+
+// breadcrumb
+
+.breadcrumb
+	background: none
+.breadcrumb>li+li:before
+	content: url('./../img/right-arrow.png')
+.breadcrumb>li
+	color: #7b7b7b
+	font-family: sans-regular
+	font-size: 14px
+	font-weight: 300
+	a
+		text-decoration: underline
+		color: #7b7b7b
+
+.info-icon-wrapper
+		position: absolute
+		top: 30px
+		right: 25px
+		cursor: pointer
+		width: 40px
+		height: 40px
+		.info-icon
+			display: block
+			width: 15px
+			height: 15px
+			background: url(../img/info-icon.png)
+			margin: 30% auto
+//tooltip
+
+.tooltip-info
+	position: absolute
+	height: 210px
+	width: 300px
+	top: 94%
+	// left: 62%
+	left: 55%
+	background: white
+	transform: translate(-50%, -50%)
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3)
+
+.tooltip-description
+	width: 100%
+	padding: 0 15px
+	padding-top: 10px
+
+.tooltip__arrow
+  width: 50px
+  height: 50px
+  position: absolute
+  top: 0%
+  left: -8%
+  transform: translateX(-50%)
+  overflow: hidden
+  &::after
+    content: ""
+    position: absolute
+    width: 20px
+    height: 20px
+    background: white
+    transform: translateX(-50%) translateY(0%) rotate(45deg)
+    top: 10px
+    left: 100%
+
+.tooltip__arrow::after
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3)
+
+.tooltip-info
+	display: none

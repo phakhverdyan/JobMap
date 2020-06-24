@@ -1,0 +1,397 @@
+// Style of the tables
+.billing-info
+    table
+        border-bottom: 1px solid #dddddd
+        border-top: 1px solid #dddddd
+    .table>thead>tr>th
+        border-bottom: 1px solid #dddddd
+    thead
+        background: #f7f7f7
+        tr>td
+            vertical-align: middle
+    tr
+        height: 50px
+        th,td
+            border-top: 0
+            padding-bottom: 0
+            vertical-align: middle!important
+            color: #7b7b7b
+            font-family: sans-regular
+            font-size: 14px
+            font-weight: 400
+            line-height: 14px
+            padding: 0 25px!important
+            text-align: center
+            text-align: -webkit-center
+            &:first-child
+                text-align: left
+
+    .card
+        background: #fff
+        z-index: 1
+        border-radius: 5px
+        padding: 10px
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+        overflow: hidden
+        .card-header
+            padding: 15px 25px
+            .header-title
+                padding: 0 10px
+                font-weight: 400
+                font-family: sans-regular
+                color: #7b7b7b
+                font-size: 17px
+            .header-title.blue
+                color: #2380ed
+            span
+                width: 350px
+                height: 24px
+                color: #7b7b7b
+                font-family: sans-semibold
+                font-size: 24px
+                font-weight: 600
+
+    /*Links in table */
+    .link
+        cursor: pointer
+        img
+            margin-right: 5px
+            padding: 0
+        a
+            color: $blue
+            text-decoration: underline
+
+
+    .button
+        display: block
+        text-align: center
+        font-family: sans-semibold
+        font-size: 16px
+        font-weight: 600
+        line-height: 43px
+        padding: 5px
+        &:hover
+            color: $white
+        img
+            width: 19px
+            height: 25px
+            margin-right: 10px
+
+    .pay-success-button
+        width: 71px
+        height: 30px
+        padding: 0px
+        color: $green
+        border: 1px solid $green
+        border-radius: 3px
+        font-size: 13px
+        font-family: sans-regular
+        font-weight: 400
+        line-height: 30px
+        &:hover
+            background: $green
+            color: $white
+            transition: all 0.2s
+            text-decoration: none
+            cursor: pointer
+    .pay-err-button
+        width: 102px
+        height: 28px
+        padding: 0px
+        color: $red
+        border: 1px solid $red
+        border-radius: 3px
+        font-size: 13px
+        font-family: sans-regular
+        font-weight: 400
+        line-height: 25px
+        &:hover
+            background: $red
+            color: $white
+            transition: all 0.2s
+            text-decoration: none
+            cursor: pointer
+    .pay-button
+        width: 71px
+        height: 30px
+        padding: 0px
+        border: 1px solid $blue
+        font-size: 13px
+        font-family: sans-regular
+        font-weight: 400
+        line-height: 30px
+        &:hover
+            background: $blue
+            color: $white
+            transition: all 0.2s
+            text-decoration: none
+            cursor: pointer
+    .card-button
+        width: 160px
+        height: 40px
+        padding: 0px
+        border: 1px solid $blue
+        border-radius: 3px
+        margin-left: 15px
+        margin-bottom: 15px
+        font-size: 15px
+        font-family: sans-regular
+        font-weight: 400
+        &:hover
+            background: $blue
+            color: $white
+            transition: all 0.2s
+            text-decoration: none
+            cursor: pointer
+
+    .card-button.large
+      width: 189px
+      height: 48px
+      border-radius: 3px
+      border: 1px solid #1d90ed
+      background-color: rgba(29, 144, 237, 0)
+      &:hover
+        background: $blue
+        color: $white
+        transition: all 0.2s
+        text-decoration: none
+        cursor: pointer
+
+// sidebar
+
+.nav-side-menu
+  position: fixed
+  // top: 70px
+  top: 0px
+  width: 263px
+  height: 100%
+  background-color: $white
+  box-shadow: 4px 4px 20px 0 rgba(0, 0, 0, 0.03)
+  overflow: auto
+  .menu-list
+    margin-top: 25px
+  ul, li
+    list-style: none
+    padding: 0px
+    margin: 0px
+    line-height: 35px
+    cursor: pointer
+  ul :not(collapsed) .arrow:before, li :not(collapsed) .arrow:before
+    font-family: FontAwesome
+    content: "\f078"
+    display: inline-block
+    padding-left: 10px
+    padding-right: 10px
+    vertical-align: middle
+    float: right
+  ul .active, li .active
+    border-left: 3px solid #d19b3d
+    background-color: #4f5b69
+  ul .sub-menu li.active, li .sub-menu li.active, ul .sub-menu li.active a, li .sub-menu li.active a
+    color: #d19b3d
+  ul .sub-menu li, li .sub-menu li
+    background-color: #181c20
+    border: none
+    line-height: 28px
+    border-bottom: 1px solid #23282e
+    margin-left: 0px
+  ul .sub-menu li:hover, li .sub-menu li:hover
+    background-color: #020203
+  ul .sub-menu li:before
+    font-family: FontAwesome
+    content: "\f105"
+    display: inline-block
+    padding-left: 10px
+    padding-right: 10px
+    vertical-align: middle
+  li
+    padding-left: 0px
+    position: relative
+    .sub-menu li:before
+      font-family: FontAwesome
+      content: "\f105"
+      display: inline-block
+      padding-left: 10px
+      padding-right: 10px
+      vertical-align: middle
+    a
+        text-decoration: none
+        margin-left: 20px
+        span
+            color: #7b7b7b
+            font-family: sans-regular
+            font-size: 15px
+            font-weight: 400
+            line-height: 45px
+        img
+            padding-left: 10px
+            padding-right: 20px
+    &:hover
+      border-left: 3px solid $blue
+      transition: all 0.3s ease
+  .menu-content
+    margin-top: 100px
+
+.disabled-hover
+  &:hover
+    border-left: none !important
+
+
+.menu-list
+  .dropdown
+    left: 40px
+    top: 20px
+.menu-list
+  .dropdown-menu
+    width: 225px
+
+    li
+      a
+        margin: 0
+        padding: 10px
+        color: #7b7b7b
+        &:hover
+          margin: 0
+          border: none
+      &:hover
+        border-left: none
+
+    .divider
+      margin: 0
+
+.profile-switcher
+  width: 200px
+  color: #7b7b7b
+  text-align: left
+  font-family: inherit
+  font-size: 15px
+  padding: 3px !important
+
+  .fa
+    font-size: 16px
+
+.business-list-icon
+  display: inline-block
+
+  img
+    height: 30px
+    width: 30px
+    border-radius: 5px
+    padding: 0 !important
+
+
+.nav-side-menu li
+  .notification
+      top: 12px
+
+@media (max-width: 1200px)
+    .billing-info-wrapper
+        margin-left: 50px
+    .billing-info tr td, .billing-info tr th
+        padding: 0 10px!important
+    .billing-info .card .card-header
+        padding: 15px 15px
+    .tooltip-info
+        left: 75%
+@media (min-width: 768px)
+    .nav-side-menu .menu-list .menu-content
+        display: block
+
+@media (max-width: 768px)
+    .nav-side-menu
+        width: 80px
+        overflow: hidden
+    .nav-side-menu .menu-list .menu-content
+        display: block
+    .nav-side-menu li a span
+        display: none
+    .nav-side-menu li, .nav-side-menu ul
+        line-height: 45px
+    .billing-info tr td, .billing-info tr th
+        padding: 0 5px!important
+    .billing-info .card .card-header
+        padding: 15px 5px
+    .clear-xs-padding
+        padding: 0px!important
+    .billing-info-wrapper
+        margin-left: 0px
+    .billing-info
+        padding: 0 0px
+    .tooltip-info
+      left: 62%
+    .info-icon-wrapper
+      right: 0px
+
+@media (max-width: 480px)
+    .nav-side-menu
+        width: 50px
+        overflow: hidden
+    .nav-side-menu .menu-list .menu-content
+        display: block
+    .nav-side-menu li a span
+        display: none
+    .nav-side-menu li, .nav-side-menu ul
+        line-height: 45px
+    .billing-info tr td, .billing-info tr th
+        padding: 0 3px!important
+    .billing-info .card .card-header
+        padding: 15px 5px
+    .nav-side-menu li a
+        margin-left: 5px
+    .billing-info tr td, .billing-info tr th
+        font-size: 10px
+    .billing-info .pay-err-button
+        width: 70px
+        font-size: 9px
+    .billing-info .card-button
+        width: 100px
+        height: 30px
+        line-height: 30px
+        font-size: 12px
+    .billing-info .card .card-header .header-title
+        font-size: 14px
+    .billing-info .card .card-header
+        padding: 10px 5px
+    .billing-info .pay-button
+        width: 35px
+    .billing-info .card-button.large
+      line-height: 45px
+      width: 100%
+    .input-title
+      font-size: 12px
+    .tooltip-info
+      left: 37%
+      top: 90%
+      width: 225px
+      .tooltip__arrow
+        right: -33%
+        top: 10%
+        left: initial
+        &::after
+          left: 0%
+
+@media (max-width: 375px)
+    .nav-side-menu
+        width: 40px
+        overflow: hidden
+    .nav-side-menu li a
+        margin-left: 0px
+    .billing-info .card
+        overflow: auto
+    .input-title
+      font-size: 11px
+
+@media (max-width: 355px)
+    .card-number-title
+      display: none
+
+@media (max-width: 320px)
+    .input-title
+      font-size: 10px
+    .tooltip-info
+      left: 28%
+
+.nav-side-menu.float-side-menu
+  position: relative
+  .menu-content
+    margin-top: 0

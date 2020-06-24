@@ -1,0 +1,38 @@
+.Bobik:after {
+            display: inline-block;
+            font: normal normal normal 14px/1 FontAwesome;
+            font-size: inherit;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+          content: "\f054";
+          transform: rotate(-90deg) ;
+          transition: all linear 0.25s;
+          float: right;
+          margin-top: 5px;
+          color:rgba(78,92,110,0.5)!important;
+          cursor:pointer;
+          }   
+        .Bobik.collapsed:after {
+          transform: rotate(90deg) ;
+          margin-top: 5px;
+        }
+        .BobikHoverEffect{
+            transition: 0.8s;
+        }
+        .BobikHoverEffect:hover{
+            background-color: #f4f6fa!important;
+            transition: 0.8s;
+        }
+                .morewithoutcaret{background-color: inherit;}
+        .morewithoutcaret:after {
+            display:none
+        }
+
+.candidate_collapse svg{
+  transition: all 0.5s;
+}
+.candidate_collapse.collapsed svg {
+  transform: rotate(180deg) ;
+  transition: all 0.5s;
+}

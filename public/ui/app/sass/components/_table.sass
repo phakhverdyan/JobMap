@@ -1,0 +1,146 @@
+/* table container */
+.table-container
+  .table
+    height: auto
+    padding: 0px
+    .cell
+      display: flex
+      align-items: center
+      flex-direction: row
+      height: inherit
+      border: 0px
+      border-bottom: 1px solid $tableBorder
+      border-left: 1px solid $tableBorder
+      transition: all 0.25s ease
+      &:last-child
+        border-right: 1px solid $tableBorder
+
+.cell.large
+	height: 100px!important
+
+.cell.white
+  background: $white
+
+.top-left-corner
+    border-top: 1px solid $tableBorder !important
+    border-top-left-radius: 5px
+
+.top-right-corner
+    border-top: 1px solid $tableBorder !important
+    border-top-right-radius: 5px
+
+.top-border
+    border-top: 1px solid $tableBorder !important
+
+.bottom-left-corner
+    border-bottom-left-radius: 5px
+
+.bottom-right-corner
+    border-bottom-right-radius: 5px
+
+.corner-none
+	border-radius: 0px!important
+
+.active-cell
+  background: #1d90ed
+  color: #fff
+  transition: all 0.25s ease
+
+.table.day-time
+  height: 60px
+  margin: 0px
+  .cell:hover
+    background: $blue
+    color: $white
+    cursor: pointer
+  .day-content
+    margin: 0 auto
+
+
+/* days table container */
+.days-table-container
+  margin-top: 30px
+  .days-table
+    height: 60px
+    padding: 0px
+    .cell
+      display: flex
+      align-items: center
+      flex-direction: row
+      height: 60px
+      border: 0px
+      border-bottom: 1px solid $tableBorder
+      border-left: 1px solid $tableBorder
+      transition: all 0.25s ease
+      &:last-child
+        border-right: 1px solid $tableBorder
+      .name
+        font-size: 14px
+        font-family: sans-regular
+      .control
+        padding-left: 0px
+        margin-right: 10px
+        margin-left: 10px
+        .control-indicator
+          left: 8px
+
+/* company-info-table */
+.company-info-table-container
+  .company-info-table
+    height: 60px
+    padding: 0px
+    .cell
+      display: flex
+      align-items: center
+      flex-direction: row
+      height: 60px
+      border: 0px
+      border-bottom: 1px solid $tableBorder
+      border-left: 1px solid $tableBorder
+      transition: all 0.25s ease
+      &:last-child
+        border-right: 1px solid $tableBorder
+      .name
+        font-size: 14px
+        font-family: sans-regular
+      .control
+        padding-left: 0px
+        margin-right: 45px
+        .control-indicator
+          left: 8px
+
+/* days list */
+.days-list
+    list-style-type: none
+    padding: 0px
+    margin-top: 25px
+    > li
+      font-size: 14px
+      font-weight: 400
+      font-family: sans-regular
+      color: #7b7b7b
+      line-height: 62px
+
+.day-time
+  .cell
+    height: 60px
+
+@media only screen and (max-width : 480px)
+	.cell.large
+		height: 120px!important
+@media only screen and (max-width : 320px)
+	.days-table-container
+		.name
+			overflow: hidden
+			height: 25px
+			position: relative
+			right: 4px
+		.days-table .cell .control
+			margin-right: 37px
+			.control-indicator
+				width: 20px
+				height: 20px
+				&:after
+					left: 6px
+					width: 8px
+					height: 14px

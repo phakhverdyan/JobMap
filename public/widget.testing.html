@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Widget Testing</title>
+	<style>
+		.jm-widget a {
+			text-decoration: none;
+		}
+
+		.jm-widget__image {
+			max-width: 100%;
+		}
+
+		.jm-widget__header {
+			position: relative;
+			border-bottom: 1px solid #cccccc;
+		}
+
+		.jm-widget__language-switcher {
+			position: absolute;
+			top: 20px; right: 20px;
+		    border-radius: 10px;
+		    background-color: #eee;
+		    border: 1px solid #eee;
+		    padding: 0px 5px;
+		    height: 25px;
+		}
+
+		.jm-widget__title {
+			padding: 20px 20px 0;
+			font-size: 20px;
+		}
+
+		.jm-widget__description {
+			padding: 10px 20px 20px;
+		}
+		
+		.jm-widget__search {
+			padding: 20px;
+			
+		}
+
+		.jm-widget__search-content{
+			display: flex;
+			border-radius: 10px;
+			background-color: #eeeeee;
+		}
+
+		.jm-widget__search input {
+			box-sizing: border-box;
+			width: 100%;
+			height: 30px;
+			border: 0;			
+			font-size: 13px;
+			padding: 0 10px;
+			border-radius: 10px;
+			background-color: #eeeeee;
+		}
+		.jm-widget__search button {
+			height: 17px;
+			border: 0;
+			align-self: center;
+			background-color: #eeeeee;
+			margin-right: 5px;
+		}
+		
+		.jm-widget__no-jobs {
+			padding: 20px;
+		}
+
+		.jm-widget__jobs {
+			display: table;
+			width: 100%;
+			margin-bottom: 20px;
+			border-bottom: 1px solid #cccccc;
+		}
+
+		.jm-widget-job {
+			display: table-row;
+		}
+
+		.jm-widget-job > div {
+			border-top: 1px solid #cccccc;
+		}
+
+		.jm-widget-job__main-details {
+			display: table-cell;
+			vertical-align: middle;
+			padding: 3px 5px 3px 20px;
+		}
+
+		.jm-widget-job__title {
+			display: block;
+			font-size: 16px;
+		}
+		
+		.jm-widget-job__location {
+			display: block;
+		}
+
+		.jm-widget-job__location img {
+			width: 16px;
+			vertical-align: middle;
+		}
+
+		.jm-widget-job__location span {
+			font-size: 14px;
+			vertical-align: middle;
+		}
+
+		.jm-widget-job__employment-type {
+			display: table-cell;
+			vertical-align: middle;
+			width: 1px;
+			white-space: nowrap;
+			padding: 0 5px;
+			font-size: 14px;
+		}
+
+		.jm-widget-job__posted-time {
+			display: table-cell;
+			vertical-align: middle;
+			width: 1px;
+			white-space: nowrap;
+			padding: 0 5px;
+			font-size: 14px;
+		}
+
+		.jm-widget-job__buttons {
+			display: table-cell;
+			vertical-align: middle;
+			width: 1px;
+			white-space: nowrap;
+			padding: 0 20px 0 5px;
+		}
+
+		.jm-widget-job__buttons a {
+			display: inline-block;
+			vertical-align: middle;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 10px;
+			border-radius: 3px;
+			font-size: 14px;
+		}
+
+		/*CUSTOM STYLES*/
+		.jm-widget-job__view-button{
+			background-color: yellow;
+			color: grey;
+			border:1px solid blue;
+		}
+		.jm-widget-job__apply-button{
+			background: #cccccc;
+			color: inherit;
+			border:1px solid #ccc;
+		}
+
+		.jm-widget-job__main-details a{
+			color: green;
+		}
+
+		body{
+			background: #cccccc;
+
+			font-family: sans-serif;
+			font-size: 14px;
+			color:black;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="content" style="width: 800px; margin: 200px auto; background-color: #ffffff; border: 1px solid black;">
+		<div class="jm-widget" style="position: relative; min-height: 200px;">
+			<div class="jm-widget__loader" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+				<img src="img/widget_loading.gif">
+			</div>
+			<img class="jm-widget__image" src="http://jobmap.dv/img/widget_bg.jpg">
+			<div class="jm-widget__header">
+				<select class="jm-widget__language-switcher">
+					<option value="en">English</option>
+					<option value="fr">French</option>
+				</select>
+				<div class="jm-widget__title">JobMap Careers</div>
+				<div class="jm-widget__description">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas sed.
+				</div>
+			</div>
+			<div class="jm-widget__search">
+				<div class="jm-widget__search-content">
+					<input type="text" placeholder="Search">
+					<button type="button">
+						<img src="/img/widget-search.png" widht="17px" height="17px" style="opacity: 0.1; margin-top: -2px;">
+					</button>
+				</div>
+			</div>
+			<div class="jm-widget__jobs">
+				<div class="jm-widget-job">
+					<div class="jm-widget-job__main-details">
+						<a href="#" class="jm-widget-job__title">Security Security with questionnaire</a>
+						<a href="#" class="jm-widget-job__location">
+							<img src="http://jobmap.dv/img/placeholder.svg">
+							<span><small>Street, Montreal, QC, Canada</small></span>
+						</a>
+					</div>
+					<div class="jm-widget-job__employment-type"><small><strong>Full-Time</strong></small></div>
+					<div class="jm-widget-job__posted-time"><small>24 days ago</small></div>
+					<div class="jm-widget-job__buttons">
+						<a href="#" class="jm-widget-job__view-button">View</a>
+						<a href="#" class="jm-widget-job__apply-button">Apply</a>
+					</div>
+				</div>
+				<div class="jm-widget-job">
+					<div class="jm-widget-job__main-details">
+						<a href="#" class="jm-widget-job__title">Security Security with questionnaire</a>
+						<a href="#" class="jm-widget-job__location">
+							<img src="http://jobmap.dv/img/placeholder.svg">
+							<span><small>Street, Montreal, QC, Canada</small></span>
+						</a>
+					</div>
+					<div class="jm-widget-job__employment-type"><small><strong>Full-Time</strong></small></div>
+					<div class="jm-widget-job__posted-time"><small>24 days ago</small></div>
+					<div class="jm-widget-job__buttons">
+						<a href="#" class="jm-widget-job__view-button">View</a>
+						<a href="#" class="jm-widget-job__apply-button">Apply</a>
+					</div>
+				</div>
+				<div class="jm-widget-job">
+					<div class="jm-widget-job__main-details">
+						<a href="#" class="jm-widget-job__title">Security Security with questionnaire</a>
+						<a href="#" class="jm-widget-job__location">
+							<img src="http://jobmap.dv/img/placeholder.svg">
+							<span><small>Street, Montreal, QC, Canada</small></span>
+						</a>
+					</div>
+					<div class="jm-widget-job__employment-type"><small><strong>Full-Time</strong></small></div>
+					<div class="jm-widget-job__posted-time"><small>24 days ago</small></div>
+					<div class="jm-widget-job__buttons">
+						<a href="#" class="jm-widget-job__view-button">View</a>
+						<a href="#" class="jm-widget-job__apply-button">Apply</a>
+					</div>
+				</div>
+			</div>
+			<div class="jm-widget__no-jobs" style="display: none;">No posted Jobs yet</div>
+		</div>
+		<!-- <script async src="http://jobmap.dv/widget.1.jst"></script> -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,126 @@
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').load();
+}
+
+var port = process.env.PORT || 3333;
+var express = require('express');
+var app = require('express')();
+// var path = require('path');
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+// app.use(express.static(path.join(__dirname, 'public')));
+
+
+var numUsers = 0;
+var user = [];
+var room;
+var usernames = {};
+var clients = [];
+var checkTyping;
+var userInRoom = [];
+var users = [];
+
+io.on('connection', function (socket) {
+    socket.on('open', function (data) {
+        if (data !== null) {
+            // var rooms = data.rooms;
+            // for (var key in rooms) {
+            //     var roomId = rooms[key];
+            //     if ('business' in data) {
+            //         console.log(data.business.slug)
+            //         userInRoom[roomId][socket.id] = data.business.slug;
+            //     } else {
+            //         userInRoom[roomId][socket.id] = data.user.username;
+            //     }
+            // }
+            console.log('business' in data);
+            if ('business' in data) {
+                socket.userid = data.business.slug;
+                socket.join(data.business.slug);
+                if (clients.indexOf(data.business.slug) === -1) {
+                    clients[socket.userid] = {
+                        user: data.user,
+                        business: data.business
+                    };
+                }
+            } else {
+                socket.userid = data.user.username;
+                socket.join(data.user.username);
+                if (clients.indexOf(data.user.username) === -1) {
+                    clients[socket.userid] = {user: data.user};
+                }
+            }
+
+            socket.room = data.room;
+            socket.join(room);
+            console.log(clients)
+
+            socket.broadcast.to(socket.room).emit('online', {
+                userLists: userInRoom,
+                user: clients[socket.userid],
+                userList: clients
+
+            });
+        }
+    });
+
+    socket.on('switchRoom', function (room) {
+        if (socket.room) {
+            socket.broadcast.to(socket.room).emit('leaveRoom', {
+                user: clients[socket.userid],
+                userList: clients
+            });
+            socket.leave(socket.room);
+        }
+        socket.room = room;
+        socket.join(room);
+        socket.broadcast.to(socket.room).emit('enterRoom', {
+            user: clients[socket.userid],
+            userList: clients
+        });
+
+    });
+
+    socket.on('send', function (data) {
+        socket.broadcast.to(socket.room).emit('new message', {
+            user: clients[socket.userid],
+            userList: clients,
+            message: data.message
+        });
+    });
+
+    socket.on('typing', function (data) {
+        console.log(clients[socket.userid]);
+        socket.broadcast.to(socket.room).emit('typing', {
+            user: clients[socket.userid],
+            userList: clients
+        });
+    });
+
+    socket.on('stop typing', function (data) {
+        socket.broadcast.to(socket.room).emit('stop typing', {
+            user: clients[socket.userid],
+            userList: clients
+        });
+    });
+
+    socket.on('disconnect', function (data) {
+
+        var index = clients.indexOf(socket.userid);
+        if (index !== -1) {
+            clients.splice(index, 1);
+            socket.emit('offline', {user_id: socket.userid});
+        }
+        var userLeave = '';
+        // update list of users in chat, client-side
+        io.sockets.emit('leave', userLeave);
+        // echo globally that this client has left
+        socket.broadcast.emit('leave', userLeave);
+        socket.leave(socket.room);
+    })
+});
+
+
+server.listen(port, function () {
+    console.log('listening on *:' + port);
+});

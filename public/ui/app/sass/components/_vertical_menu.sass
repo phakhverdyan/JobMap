@@ -1,0 +1,197 @@
+@import './../_vars'
+/* Vertical tab
+
+.form-tab-container
+  display: flex
+  background-color: #fff
+  padding: 0px
+  margin-top: 20px
+  margin-bottom: 10px
+  box-shadow: 0px 2px 15px 0 rgba(0,0,0,.1), 0 6px 20px 0 rgba(0,0,0,.1)
+
+.form-tab-menu
+  padding: 0px
+  margin: 0px
+
+.list-group
+  height: 100%
+  margin-bottom: 0px
+  overflow: hidden
+
+.list-group-item.active
+  background-color: #f4f4f4
+  border: 1px solid #ddd
+  color: $blue
+  &:focus
+    background-color: #f4f4f4
+    border-color: #ddd
+    color: $blue
+  &:hover
+    background-color: $blue
+    border-color: $blue
+    color: #fff
+  .job-icon
+    background: url(./../img/resume-builder/blue-suitcase.png) no-repeat
+    background-size: contain
+  .info-icon
+    background: url(./../img/resume-builder/important-message-blue.png) no-repeat
+    background-size: contain
+  .education-icon
+    background: url(./../img/resume-builder/graduate-cap-blue.png) no-repeat
+    background-size: contain
+  .skills-icon
+    background: url(./../img/resume-builder/important-message-blue.png) no-repeat
+    background-size: contain
+  .experience-icon
+    background: url(./../img/resume-builder/time-almost-full-blue.png) no-repeat
+    background-size: contain
+  .additional-info-icon
+    background: url(./../img/resume-builder/plus-button-blue.png) no-repeat
+    background-size: contain
+  .print-icon
+    background: url(./../img/resume-builder/printer-printing-document-blue.png) no-repeat
+    background-size: contain
+
+a.list-group-item, button.list-group-item
+  color: #7d7d7d
+  transition: all 0.25s ease
+  &:hover
+    color: #fff
+    background-color: $blue
+    border-color: $blue
+  .active
+    background-color: $blue
+    border-color: $blue
+
+.list-group-item
+  height: 110px
+  padding: 36px 35px 36px 50px
+  text-align: left
+  font-family: sans-regular
+  font-weight: 400
+  font-size: 14px
+  &:first-child
+    border-top-right-radius: 0px
+  &:last-child
+    height: calc(100% - 5px)
+    padding: 50px 35px 80px 50px
+    border-bottom-right-radius: 0px
+  &:hover
+    background-color: $blue
+    border-color: $blue
+    .job-icon
+      background: url(./../img/resume-builder/white-suitcase.png) no-repeat
+      background-size: contain
+    .info-icon
+      background: url(./../img/resume-builder/important-message-white.png) no-repeat
+      background-size: contain
+    .education-icon
+      background: url(./../img/resume-builder/graduate-cap-white.png) no-repeat
+      background-size: contain
+    .skills-icon
+      background: url(./../img/resume-builder/favorite-star-white.png) no-repeat
+      background-size: contain
+    .experience-icon
+      background: url(./../img/resume-builder/time-almost-full-white.png) no-repeat
+      background-size: contain
+    .additional-info-icon
+      background: url(./../img/resume-builder/plus-button-white.png) no-repeat
+      background-size: contain
+    .print-icon
+      background: url(./../img/resume-builder/printer-printing-document-white.png) no-repeat
+      background-size: contain
+  .job-icon
+    background: url(./../img/resume-builder/grey-suitcase.png) no-repeat
+    background-size: contain
+  .info-icon
+    background: url(./../img/resume-builder/important-message-grey.png) no-repeat
+    background-size: contain
+  .education-icon
+    background: url(./../img/resume-builder/graduate-cap-grey.png) no-repeat
+    background-size: contain
+  .skills-icon
+    background: url(./../img/resume-builder/favorite-star-grey.png) no-repeat
+    background-size: contain
+  .experience-icon
+    background: url(./../img/resume-builder/time-almost-full-grey.png) no-repeat
+    background-size: contain
+  .additional-info-icon
+    background: url(./../img/resume-builder/plus-button-grey.png) no-repeat
+    background-size: contain
+  .print-icon
+    background: url(./../img/resume-builder/printer-printing-document-grey.png) no-repeat
+    background-size: contain
+  .active
+    z-index: 2
+    color: #fff
+    &:focus, &:hover
+      z-index: 2
+      color: #fff
+      background-color: $blue
+      border-color: $blue
+
+.list-group-item:last-child.active:after
+  top: 22%!important
+
+/* active triangle
+
+div.form-tab-menu div.list-group > a.active:after
+  content: ''
+  position: absolute
+  right: -1%
+  top: 50%
+  margin-top: -13px
+  border-left: 0
+  border-bottom: 13px solid transparent
+  border-top: 13px solid transparent
+  border-right: 12px solid #fff
+
+.title
+  margin-top: 25px
+  > img
+    margin-right: 10px
+    position: relative
+  > span
+    position: relative
+    top: 4px
+    color: $blue
+    font-weight: 300
+    font-size: 16px
+    font-weight: 300
+    line-height: 14px
+    font-family: sans-regular
+  .sub-title
+    color: #7b7b7b
+    font-family: sans-light
+    font-weight: 300
+    font-size: 13px
+    position: relative
+    right: 5px
+
+
+div.form-tab div.form-tab-content:not(.active)
+  display: none
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	.list-group-item
+    	padding: 36px 10px 36px 50px
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+  .list-group-item
+    padding: 36px 10px 36px 35px
+  .list-group-item:last-child.active:after
+    top: 27%!important
+  .list-group-item:last-child
+    padding: 65px 10px 65px 35px
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px)
+  .list-group-item > span
+    display: none
+  .list-group-item:last-child.active:after
+    top: 34%!important
+  .list-group-item:last-child
+    padding: 95px 10px 95px 35px
